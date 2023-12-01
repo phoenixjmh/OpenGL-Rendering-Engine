@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.4...3.20)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project(Phoesics)
 
 add_subdirectory(external/glfw)
@@ -15,20 +16,17 @@ target_include_directories(${PROJECT_NAME}
   PUBLIC
   src/vendor/
   PUBLIC glad
+  PUBLIC /shaders
   )
-# find_package(glfw REQUIRED)
 target_link_directories(${PROJECT_NAME}
   PUBLIC external/glfw/include
   PUBLIC external/glm
   PUBLIC src/
   PUBLIC src/vendor/
   PUBLIC glad
+  PUBLIC /shaders
   )
 target_link_libraries(${PROJECT_NAME} glfw )
-file(GLOB_RECURSE GLSL_SOURCE_FILES
-  "${PROJECT_SOURCE_DIR}/shaders/*.frag"
-  "${PROJECT_SOURCE_DIR}/shaders/*.vert"
-  ) 
-add_custom_target(
-  shaders
-  )
+# add_custom_target(
+  # ${GLSL_SOURCE_FILES}
+  # )

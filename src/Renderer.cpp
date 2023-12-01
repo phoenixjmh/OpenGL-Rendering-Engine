@@ -144,15 +144,15 @@ int Renderer::create_window(const int width, const int height)
 
 int Renderer::glad_init()
 {
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    // if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
-      std::cout << "Failed to initialize GLAD\n";
-        return -1;
+      gladLoadGL();
+        return 0;
     }
 }
 
 void Renderer::create_shader()
 {
-    m_shader = new Shader("Shaders/shader.vert", "Shaders/shader.frag");
-    m_light_shader = new Shader("Shaders/lighting.vert", "Shaders/lighting.frag");
+    m_shader = new Shader("../shaders/shader.vert", "../shaders/shader.frag");
+    m_light_shader = new Shader("../shaders/lighting.vert", "../shaders/lighting.frag");
 }
