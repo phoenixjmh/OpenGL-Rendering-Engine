@@ -1,0 +1,13 @@
+#pragma once
+#include <vector>
+struct ShapeFactory {
+  static std::vector<float> create_circle(float size);
+  static std::vector<unsigned int> index_circle(int num_segments);
+
+  static std::vector<float> create_cube();
+  static std::vector<unsigned int> index_cube();
+
+  static std::vector<float> create_sphere(float size);
+  static std::vector<unsigned int> index_sphere(int num_segments);
+  
+};
