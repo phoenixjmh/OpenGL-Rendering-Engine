@@ -1,6 +1,6 @@
 #pragma once
-#include "../headers/VertexBuffer.h"
-#include <glad.h>
+#include "VertexBuffer.h"
+#include <glad/glad.h>
 #include <vector>
 
 

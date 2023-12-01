@@ -1,4 +1,4 @@
-#include "../headers/Renderer.h"
+#include "Renderer.h"
 
 #include <vector>
 #define LOG(x) std::cout << x << "\n";
@@ -146,7 +146,7 @@ int Renderer::glad_init()
 {
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
-        std::cout << "Failed to initialize GLAD" << std::endl;
+      std::cout << "Failed to initialize GLAD\n";
         return -1;
     }
 }

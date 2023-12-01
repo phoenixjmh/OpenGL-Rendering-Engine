@@ -1,4 +1,4 @@
-#include "../headers/VertexArray.h"
+#include "VertexArray.h"
 
 VertexArray::VertexArray(std::vector<float> vertices)
 

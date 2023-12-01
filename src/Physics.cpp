@@ -1,12 +1,12 @@
-#include "../headers/Physics.h"
+#include "Physics.h"
 
 #include <iostream>
 
 /// Collision between two bodies
 void Physics::ResolveCollision(Circle& a, Circle& b, float magnitude, float deltaTime)
 {
-    sf::Vector2f direction = b.pos - a.pos;
-    sf::Vector2f normal = {direction.x / magnitude, direction.y / magnitude};
+  glm::vec2 direction = b.pos - a.pos;
+  glm::vec2 normal = {direction.x / magnitude, direction.y / magnitude};
 
     float relative_velocity = (a.vel.x - b.vel.x) * normal.x + (a.vel.y - b.vel.y) * normal.y;
     float totalMass = (a.mass + b.mass);

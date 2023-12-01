@@ -1,4 +1,4 @@
-#include "../headers/ShapeFactory.h"
+#include "ShapeFactory.h"
 
 std::vector<float> ShapeFactory::create_circle(float size)
 {

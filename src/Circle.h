@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 #include "glm/vec2.hpp"
 class Circle
 {

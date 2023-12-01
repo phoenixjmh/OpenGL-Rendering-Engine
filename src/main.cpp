@@ -2,12 +2,12 @@
 
 #include <iostream>
 
-#include "../headers/Physics.h"
+#include "Physics.h"
 
 #include <stdio.h>
 
-#include "../headers/Mouse.h"
-#include "../headers/Renderer.h"
+#include "Mouse.h"
+#include "Renderer.h"
 #include "vendor/imgui/imgui.h"
 #include "vendor/imgui/imgui_impl_glfw.h"
 #include "vendor/imgui/imgui_impl_opengl3.h"

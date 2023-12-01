@@ -1,4 +1,4 @@
-﻿#include "../headers/Model.h"
+﻿#include "Model.h"
 
 #include "vendor/imgui/imgui_impl_opengl3_loader.h"
 #include <iostream>

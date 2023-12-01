@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 #include <vector>
 struct ShapeFactory {
   static std::vector<float> create_circle(float size);
