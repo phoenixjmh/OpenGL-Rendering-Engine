@@ -12,10 +12,11 @@ target_include_directories(${PROJECT_NAME}
   PUBLIC
   external/glm
   PUBLIC
+  external/
+  PUBLIC
   src/
   PUBLIC
   src/vendor/
-  PUBLIC glad
   PUBLIC /shaders
   )
 target_link_directories(${PROJECT_NAME}
@@ -23,10 +24,8 @@ target_link_directories(${PROJECT_NAME}
   PUBLIC external/glm
   PUBLIC src/
   PUBLIC src/vendor/
-  PUBLIC glad
+  PUBLIC external/
   PUBLIC /shaders
   )
 target_link_libraries(${PROJECT_NAME} glfw )
-# add_custom_target(
-  # ${GLSL_SOURCE_FILES}
-  # )
+

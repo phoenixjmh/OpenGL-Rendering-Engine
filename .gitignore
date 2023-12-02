@@ -10,6 +10,8 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 
+# Visual studio files
+.vs
 
 # Compiled Object files
 **/.DS_Store

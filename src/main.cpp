@@ -1,11 +1,7 @@
 #include "Editor.h"
-
 #include <iostream>
-
 #include "Physics.h"
-
 #include <stdio.h>
-
 #include "Mouse.h"
 #include "Renderer.h"
 #include "vendor/imgui/imgui.h"
@@ -41,6 +37,7 @@ void Simulate(GLFWwindow* window, double time, double deltaTime)
             }
         }
         s.update(deltaTime);
+        std::cout<<"Things happening\n";
     }
 }
 
@@ -113,7 +110,9 @@ int main()
         while (accumulator > dt)
         {
             Physics::previousToCurrent();
-            if (editor.debug_is_simulate) Simulate(window, t, dt);
+            if (editor.debug_is_simulate)
+                Simulate(window, t, dt);
+
             t += dt;
             accumulator -= dt;
         }

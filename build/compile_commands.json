@@ -1,254 +1,242 @@
 [
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/Circle.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/Circle.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/Circle.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/Circle.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\Circle.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Circle.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Circle.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\Circle.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/Editor.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/Editor.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/Editor.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/Editor.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\Editor.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Editor.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Editor.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\Editor.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/IndexBuffer.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/IndexBuffer.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/IndexBuffer.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/IndexBuffer.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\IndexBuffer.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\IndexBuffer.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\IndexBuffer.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\IndexBuffer.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/Model.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/Model.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/Model.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/Model.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\Model.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Model.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Model.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\Model.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/Physics.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/Physics.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/Physics.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/Physics.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\Physics.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Physics.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Physics.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\Physics.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/Renderer.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/Renderer.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/Renderer.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/Renderer.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\Renderer.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Renderer.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Renderer.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\Renderer.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/Shader.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/Shader.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/Shader.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/Shader.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\Shader.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Shader.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\Shader.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\Shader.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/ShapeFactory.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/ShapeFactory.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/ShapeFactory.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/ShapeFactory.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\ShapeFactory.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\ShapeFactory.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\ShapeFactory.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\ShapeFactory.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/VertexArray.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/VertexArray.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/VertexArray.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/VertexArray.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\VertexArray.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\VertexArray.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\VertexArray.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\VertexArray.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/VertexBuffer.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/VertexBuffer.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/VertexBuffer.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/VertexBuffer.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\VertexBuffer.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\VertexBuffer.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\VertexBuffer.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\VertexBuffer.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/main.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/main.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/main.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/main.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\main.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\main.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\main.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\main.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_demo.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_demo.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_demo.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_demo.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_demo.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_demo.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_demo.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_demo.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_draw.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_draw.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_draw.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_draw.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_draw.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_draw.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_draw.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_draw.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_impl_glfw.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_impl_glfw.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_impl_glfw.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_impl_glfw.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_impl_glfw.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_impl_glfw.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_impl_glfw.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_impl_glfw.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_impl_opengl3.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_impl_opengl3.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_impl_opengl3.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_impl_opengl3.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_impl_opengl3.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_impl_opengl3.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_impl_opengl3.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_impl_opengl3.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_tables.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_tables.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_tables.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_tables.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_tables.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_tables.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_tables.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_tables.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/c++  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_widgets.cpp.o -c /home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_widgets.cpp",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/vendor/imgui/imgui_widgets.cpp",
-  "output": "CMakeFiles/Phoesics.dir/src/vendor/imgui/imgui_widgets.cpp.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_widgets.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_widgets.cpp",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\imgui\\imgui_widgets.cpp",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\vendor\\imgui\\imgui_widgets.cpp.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build",
-  "command": "/usr/bin/cc  -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glm -I/home/phoenixjmh/Documents/proj/phoesics/src -I/home/phoenixjmh/Documents/proj/phoesics/src/vendor -I/home/phoenixjmh/Documents/proj/phoesics/glad -I/shaders  -o CMakeFiles/Phoesics.dir/src/vendor/glad.c.o -c /home/phoenixjmh/Documents/proj/phoesics/src/vendor/glad.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/src/vendor/glad.c",
-  "output": "CMakeFiles/Phoesics.dir/src/vendor/glad.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glm -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor -I\\shaders /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\Phoesics.dir\\src\\vendor\\glad.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\glad.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\src\\vendor\\glad.c",
+  "output": "CMakeFiles\\Phoesics.dir\\src\\vendor\\glad.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/context.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/context.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/context.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/context.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\context.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\context.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\context.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\context.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/init.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/init.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/init.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/init.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\init.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\init.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\init.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\init.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/input.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/input.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/input.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/input.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\input.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\input.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\input.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\input.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/monitor.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/monitor.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/monitor.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\monitor.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\monitor.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\monitor.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\monitor.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/platform.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/platform.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/platform.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/platform.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\platform.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\platform.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\platform.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\platform.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/vulkan.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/vulkan.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/vulkan.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\vulkan.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\vulkan.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\vulkan.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\vulkan.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/window.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/window.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/window.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/window.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\window.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\window.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\window.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\window.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/egl_context.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/egl_context.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/egl_context.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\egl_context.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\egl_context.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\egl_context.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\egl_context.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/osmesa_context.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/osmesa_context.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/osmesa_context.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\osmesa_context.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\osmesa_context.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\osmesa_context.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\osmesa_context.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_init.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/null_init.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/null_init.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\null_init.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\null_init.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\null_init.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\null_init.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_monitor.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/null_monitor.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/null_monitor.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\null_monitor.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\null_monitor.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\null_monitor.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\null_monitor.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_window.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/null_window.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/null_window.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\null_window.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\null_window.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\null_window.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\null_window.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_joystick.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/null_joystick.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/null_joystick.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\null_joystick.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\null_joystick.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\null_joystick.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\null_joystick.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_module.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/posix_module.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/posix_module.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_module.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_module.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_module.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_module.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_time.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/posix_time.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/posix_time.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_time.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_time.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_time.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_time.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_thread.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/posix_thread.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/posix_thread.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_thread.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_thread.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_thread.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_thread.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_init.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/x11_init.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/x11_init.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_init.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_init.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_init.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_init.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_monitor.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/x11_monitor.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/x11_monitor.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_joystick.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_joystick.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_joystick.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_joystick.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_window.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/x11_window.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/x11_window.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_monitor.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_monitor.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_monitor.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_monitor.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/xkb_unicode.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/xkb_unicode.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/xkb_unicode.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_window.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_window.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\win32_window.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_window.c.obj"
 },
 {
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/glx_context.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/glx_context.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/glx_context.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o"
-},
-{
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/linux_joystick.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/linux_joystick.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/linux_joystick.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o"
-},
-{
-  "directory": "/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src",
-  "command": "/usr/bin/cc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/include -I/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src -I/home/phoenixjmh/Documents/proj/phoesics/build/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_poll.c.o -c /home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/posix_poll.c",
-  "file": "/home/phoenixjmh/Documents/proj/phoesics/external/glfw/src/posix_poll.c",
-  "output": "external/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o"
+  "directory": "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\include -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src -IC:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\external\\glfw\\src /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /W3 /Foexternal\\glfw\\src\\CMakeFiles\\glfw.dir\\wgl_context.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\wgl_context.c",
+  "file": "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\external\\glfw\\src\\wgl_context.c",
+  "output": "external\\glfw\\src\\CMakeFiles\\glfw.dir\\wgl_context.c.obj"
 }
 ]
