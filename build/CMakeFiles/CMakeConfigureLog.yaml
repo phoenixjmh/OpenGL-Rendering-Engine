@@ -17,43 +17,51 @@ events:
       - "CMakeLists.txt:3 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x64/cl.exe 
+      Compiler:  
       Build flags: 
       Id flags:  
       
       The output was:
       0
-      Microsoft (R) C/C++ Optimizing Compiler Version 19.37.32822 for x64
-      Copyright (C) Microsoft Corporation.  All rights reserved.
+      MSBuild version 17.7.2+d6990bcfa for .NET Framework
+      Build started 12/1/2023 6:11:18 PM.
       
-      CMakeCCompilerId.c
-      Microsoft (R) Incremental Linker Version 14.37.32822.0
-      Copyright (C) Microsoft Corporation.  All rights reserved.
+      Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\3.26.4-msvc4\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\3.26.4-msvc4\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\3.26.4-msvc4\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
       
-      /out:CMakeCCompilerId.exe 
-      CMakeCCompilerId.obj 
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.56
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/3.26.4-msvc4/CompilerIdC/CMakeCCompilerId.exe
+        C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/3.26.4-msvc4/CompilerIdC/CompilerIdC.exe
       
-  -
-    kind: "message-v1"
-    backtrace:
-      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:1153 (message)"
-      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:221 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
-      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:3 (project)"
-    message: |
-      Detecting C compiler /showIncludes prefix:
-        main.c
-        Note: including file: C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\ShowIncludes\\foo.h
-        
-      Found prefix "Note: including file: "
   -
     kind: "message-v1"
     backtrace:
@@ -63,43 +71,51 @@ events:
       - "CMakeLists.txt:3 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x64/cl.exe 
+      Compiler:  
       Build flags: 
       Id flags:  
       
       The output was:
       0
-      Microsoft (R) C/C++ Optimizing Compiler Version 19.37.32822 for x64
-      Copyright (C) Microsoft Corporation.  All rights reserved.
+      MSBuild version 17.7.2+d6990bcfa for .NET Framework
+      Build started 12/1/2023 6:11:19 PM.
       
-      CMakeCXXCompilerId.cpp
-      Microsoft (R) Incremental Linker Version 14.37.32822.0
-      Copyright (C) Microsoft Corporation.  All rights reserved.
+      Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\3.26.4-msvc4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\3.26.4-msvc4\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\3.26.4-msvc4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
       
-      /out:CMakeCXXCompilerId.exe 
-      CMakeCXXCompilerId.obj 
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.39
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/3.26.4-msvc4/CompilerIdCXX/CMakeCXXCompilerId.exe
+        C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/3.26.4-msvc4/CompilerIdCXX/CompilerIdCXX.exe
       
-  -
-    kind: "message-v1"
-    backtrace:
-      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:1153 (message)"
-      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:221 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
-      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:3 (project)"
-    message: |
-      Detecting CXX compiler /showIncludes prefix:
-        main.c
-        Note: including file: C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\ShowIncludes\\foo.h
-        
-      Found prefix "Note: including file: "
   -
     kind: "try_compile-v1"
     backtrace:
@@ -109,8 +125,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-2y9l64"
-      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-2y9l64"
+      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-uwj7y4"
+      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-uwj7y4"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -119,10 +135,38 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-2y9l64
+        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-uwj7y4
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_55d57 && [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_55d57.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_55d57.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_55d57.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_55d57.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_55d57.exe /implib:cmTC_55d57.lib /pdb:cmTC_55d57.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ae15c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.7.2+d6990bcfa for .NET Framework
+        Build started 12/1/2023 6:11:20 PM.
+        
+        Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwj7y4\\cmTC_ae15c.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_ae15c.dir\\Debug\\".
+          Creating directory "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwj7y4\\Debug\\".
+          Creating directory "cmTC_ae15c.dir\\Debug\\cmTC_ae15c.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_ae15c.dir\\Debug\\cmTC_ae15c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_ae15c.dir\\Debug\\cmTC_ae15c.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ae15c.dir\\Debug\\\\" /Fd"cmTC_ae15c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.37.32822 for x64
+          CMakeCCompilerABI.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ae15c.dir\\Debug\\\\" /Fd"cmTC_ae15c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwj7y4\\Debug\\cmTC_ae15c.exe" /INCREMENTAL /ILK:"cmTC_ae15c.dir\\Debug\\cmTC_ae15c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-uwj7y4/Debug/cmTC_ae15c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-uwj7y4/Debug/cmTC_ae15c.lib" /MACHINE:X64  /machine:x64 cmTC_ae15c.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_ae15c.vcxproj -> C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwj7y4\\Debug\\cmTC_ae15c.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_ae15c.dir\\Debug\\cmTC_ae15c.tlog\\unsuccessfulbuild".
+          Touching "cmTC_ae15c.dir\\Debug\\cmTC_ae15c.tlog\\cmTC_ae15c.lastbuildstate".
+        Done Building Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwj7y4\\cmTC_ae15c.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.40
         
       exitCode: 0
   -
@@ -134,8 +178,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-bax36e"
-      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-bax36e"
+      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-bg4ddd"
+      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-bg4ddd"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -144,10 +188,38 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-bax36e
+        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-bg4ddd
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_52689 && [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_52689.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_52689.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_52689.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_52689.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_52689.exe /implib:cmTC_52689.lib /pdb:cmTC_52689.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_4b836.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.7.2+d6990bcfa for .NET Framework
+        Build started 12/1/2023 6:11:20 PM.
+        
+        Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bg4ddd\\cmTC_4b836.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_4b836.dir\\Debug\\".
+          Creating directory "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bg4ddd\\Debug\\".
+          Creating directory "cmTC_4b836.dir\\Debug\\cmTC_4b836.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_4b836.dir\\Debug\\cmTC_4b836.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_4b836.dir\\Debug\\cmTC_4b836.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4b836.dir\\Debug\\\\" /Fd"cmTC_4b836.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.37.32822 for x64
+          CMakeCXXCompilerABI.cpp
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4b836.dir\\Debug\\\\" /Fd"cmTC_4b836.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bg4ddd\\Debug\\cmTC_4b836.exe" /INCREMENTAL /ILK:"cmTC_4b836.dir\\Debug\\cmTC_4b836.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-bg4ddd/Debug/cmTC_4b836.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-bg4ddd/Debug/cmTC_4b836.lib" /MACHINE:X64  /machine:x64 cmTC_4b836.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_4b836.vcxproj -> C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bg4ddd\\Debug\\cmTC_4b836.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_4b836.dir\\Debug\\cmTC_4b836.tlog\\unsuccessfulbuild".
+          Touching "cmTC_4b836.dir\\Debug\\cmTC_4b836.tlog\\cmTC_4b836.lastbuildstate".
+        Done Building Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bg4ddd\\cmTC_4b836.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.40
         
       exitCode: 0
   -
@@ -161,8 +233,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-l6kd8m"
-      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-l6kd8m"
+      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-xb37yw"
+      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-xb37yw"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -172,13 +244,38 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-l6kd8m
+        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-xb37yw
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_8b8f7 && [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_8b8f7.dir\\src.c.obj /FdCMakeFiles\\cmTC_8b8f7.dir\\ /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6kd8m\\src.c
-        FAILED: CMakeFiles/cmTC_8b8f7.dir/src.c.obj 
-        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_8b8f7.dir\\src.c.obj /FdCMakeFiles\\cmTC_8b8f7.dir\\ /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6kd8m\\src.c
-        C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6kd8m\\src.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_10c3c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.7.2+d6990bcfa for .NET Framework
+        Build started 12/1/2023 6:11:21 PM.
+        
+        Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\cmTC_10c3c.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_10c3c.dir\\Debug\\".
+          Creating directory "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\Debug\\".
+          Creating directory "cmTC_10c3c.dir\\Debug\\cmTC_10c3c.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_10c3c.dir\\Debug\\cmTC_10c3c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_10c3c.dir\\Debug\\cmTC_10c3c.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_10c3c.dir\\Debug\\\\" /Fd"cmTC_10c3c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.37.32822 for x64
+          src.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_10c3c.dir\\Debug\\\\" /Fd"cmTC_10c3c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\src.c"
+        C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\src.c(1,10): fatal  error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\cmTC_10c3c.vcxproj]
+        Done Building Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\cmTC_10c3c.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\cmTC_10c3c.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\src.c(1,10): fatal  error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb37yw\\cmTC_10c3c.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.27
         
       exitCode: 1
   -
@@ -191,8 +288,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-fgs882"
-      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-fgs882"
+      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-b9bjtv"
+      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-b9bjtv"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -202,15 +299,40 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-fgs882
+        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-b9bjtv
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_5e0c7 && [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_5e0c7.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_5e0c7.dir\\ /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fgs882\\CheckFunctionExists.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_5e0c7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_5e0c7.dir\\CheckFunctionExists.c.obj  /out:cmTC_5e0c7.exe /implib:cmTC_5e0c7.lib /pdb:cmTC_5e0c7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_5e0c7.exe 
-        cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_5e0c7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_5e0c7.dir\\CheckFunctionExists.c.obj  /out:cmTC_5e0c7.exe /implib:cmTC_5e0c7.lib /pdb:cmTC_5e0c7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_5e0c7.dir\\CheckFunctionExists.c.obj /out:cmTC_5e0c7.exe /implib:cmTC_5e0c7.lib /pdb:cmTC_5e0c7.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_5e0c7.dir/intermediate.manifest CMakeFiles\\cmTC_5e0c7.dir/manifest.res" failed (exit code 1104) with the following output:
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib'\x0d
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_3c4a1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.7.2+d6990bcfa for .NET Framework
+        Build started 12/1/2023 6:11:21 PM.
+        
+        Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\cmTC_3c4a1.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_3c4a1.dir\\Debug\\".
+          Creating directory "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\Debug\\".
+          Creating directory "cmTC_3c4a1.dir\\Debug\\cmTC_3c4a1.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_3c4a1.dir\\Debug\\cmTC_3c4a1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_3c4a1.dir\\Debug\\cmTC_3c4a1.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3c4a1.dir\\Debug\\\\" /Fd"cmTC_3c4a1.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.37.32822 for x64
+          CheckFunctionExists.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3c4a1.dir\\Debug\\\\" /Fd"cmTC_3c4a1.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\Debug\\cmTC_3c4a1.exe" /INCREMENTAL /ILK:"cmTC_3c4a1.dir\\Debug\\cmTC_3c4a1.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-b9bjtv/Debug/cmTC_3c4a1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-b9bjtv/Debug/cmTC_3c4a1.lib" /MACHINE:X64  /machine:x64 cmTC_3c4a1.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\cmTC_3c4a1.vcxproj]
+        Done Building Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\cmTC_3c4a1.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\cmTC_3c4a1.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9bjtv\\cmTC_3c4a1.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.32
         
       exitCode: 1
   -
@@ -223,8 +345,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-vckrbv"
-      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-vckrbv"
+      source: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-gs02tp"
+      binary: "C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-gs02tp"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -234,15 +356,40 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-vckrbv
+        Change Dir: C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-gs02tp
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_d547f && [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_d547f.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_d547f.dir\\ /FS -c C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vckrbv\\CheckFunctionExists.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_d547f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d547f.dir\\CheckFunctionExists.c.obj  /out:cmTC_d547f.exe /implib:cmTC_d547f.lib /pdb:cmTC_d547f.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_d547f.exe 
-        cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_d547f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d547f.dir\\CheckFunctionExists.c.obj  /out:cmTC_d547f.exe /implib:cmTC_d547f.lib /pdb:cmTC_d547f.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d547f.dir\\CheckFunctionExists.c.obj /out:cmTC_d547f.exe /implib:cmTC_d547f.lib /pdb:cmTC_d547f.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_d547f.dir/intermediate.manifest CMakeFiles\\cmTC_d547f.dir/manifest.res" failed (exit code 1104) with the following output:
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib'\x0d
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_8c9a5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.7.2+d6990bcfa for .NET Framework
+        Build started 12/1/2023 6:11:22 PM.
+        
+        Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\cmTC_8c9a5.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_8c9a5.dir\\Debug\\".
+          Creating directory "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\Debug\\".
+          Creating directory "cmTC_8c9a5.dir\\Debug\\cmTC_8c9a5.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_8c9a5.dir\\Debug\\cmTC_8c9a5.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8c9a5.dir\\Debug\\cmTC_8c9a5.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8c9a5.dir\\Debug\\\\" /Fd"cmTC_8c9a5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.37.32822 for x64
+          CheckFunctionExists.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8c9a5.dir\\Debug\\\\" /Fd"cmTC_8c9a5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\Debug\\cmTC_8c9a5.exe" /INCREMENTAL /ILK:"cmTC_8c9a5.dir\\Debug\\cmTC_8c9a5.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-gs02tp/Debug/cmTC_8c9a5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/TheUltimateFuckstick/Desktop/Phoesics_/build/CMakeFiles/CMakeScratch/TryCompile-gs02tp/Debug/cmTC_8c9a5.lib" /MACHINE:X64  /machine:x64 cmTC_8c9a5.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\cmTC_8c9a5.vcxproj]
+        Done Building Project "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\cmTC_8c9a5.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\cmTC_8c9a5.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\TheUltimateFuckstick\\Desktop\\Phoesics_\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gs02tp\\cmTC_8c9a5.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.32
         
       exitCode: 1
 ...
