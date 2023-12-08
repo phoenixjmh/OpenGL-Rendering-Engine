@@ -6,7 +6,8 @@
 
 class VertexArray {
 public:
-  VertexArray(std::vector<float> vertices);
+  VertexArray();
+  ~VertexArray();
   void AddBuffer(VertexBuffer *buffer);
   void Bind();
   void Unbind();

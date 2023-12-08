@@ -11,7 +11,6 @@
 int PhysicsObject::nxt_id = 0;
 #define LOG(x) std::cout << x << "\n";
 
-
 void RenderPositions(GLFWwindow* window, Renderer* renderer, Editor* editor, float alpha)
 {
     glfwMakeContextCurrent(renderer->GetWindow());
@@ -80,7 +79,7 @@ int main()
             Physics::previousToCurrent();
             if (editor.debug_is_simulate)
                 engine.Update(dt);
-                
+
             t += dt;
             accumulator -= dt;
         }
@@ -116,21 +115,21 @@ void processInput(GLFWwindow* window, Renderer* renderer, Editor& editor, float 
     }
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        renderer->camera.cameraPosition += cameraSpeed * renderer->camera.cameraFront;
+        renderer->camera.camera_position += cameraSpeed * renderer->camera.camera_front;
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        renderer->camera.cameraPosition -= cameraSpeed * renderer->camera.cameraFront;
+        renderer->camera.camera_position -= cameraSpeed * renderer->camera.camera_front;
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        renderer->camera.cameraPosition -= glm::normalize(
-                                               glm::cross(renderer->camera.cameraFront, renderer->camera.cameraUp))
+        renderer->camera.camera_position -= glm::normalize(
+                                               glm::cross(renderer->camera.camera_front, renderer->camera.camera_up))
             * cameraSpeed;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        renderer->camera.cameraPosition += glm::normalize(
-                                               glm::cross(renderer->camera.cameraFront, renderer->camera.cameraUp))
+        renderer->camera.camera_position += glm::normalize(
+                                               glm::cross(renderer->camera.camera_front, renderer->camera.camera_up))
             * cameraSpeed;
 
     // LISTEN MOUSE
-    //  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     if (editor.camera_input) {
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
         double xpos;
         double ypos;
         glfwGetCursorPos(window, &xpos, &ypos);
@@ -161,7 +160,9 @@ void processInput(GLFWwindow* window, Renderer* renderer, Editor& editor, float 
         direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
         direction.y = sin(glm::radians(pitch));
         direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-        renderer->camera.cameraFront = glm::normalize(direction);
+        renderer->camera.camera_front = glm::normalize(direction);
+    } else {
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
     }
 }
 

@@ -1,24 +1,26 @@
 ﻿#pragma once
-#include <memory>
-#include <string>
-#include <glm/vec3.hpp>
+#include "IndexBuffer.h"
 #include "ShapeFactory.h";
 #include "VertexArray.h"
-#include "IndexBuffer.h"
+#include <glm/vec3.hpp>
+#include <memory>
+#include <string>
 
 class Model {
 public:
     Model(std::string type);
     ~Model();
-
-    std::string m_type;
+    std::string type;
     glm::vec3 position;
     float size;
     void Translate();
     void Scale();
-    void Bind() { va->Bind(); }
-    void create_buffers();
-private:
-    std::shared_ptr<VertexArray> va;
+    void Bind() { m_vertexArray->Bind(); }
 
+private:
+    void buildShape();
+    void createBuffers();
+    std::vector<float> m_vertices;
+    std::vector<unsigned int> m_indices;
+    std::shared_ptr<VertexArray> m_vertexArray;
 };

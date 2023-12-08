@@ -1,9 +1,12 @@
 #include "VertexArray.h"
 
-VertexArray::VertexArray(std::vector<float> vertices)
+VertexArray::VertexArray()
 
 {
-    glGenVertexArrays(1, &m_RendererID);
+  glGenVertexArrays(1, &m_RendererID);
+}
+VertexArray::~VertexArray() {
+  //glDeleteVertexArrays(1,&m_RendererID);
 }
 
 void VertexArray::AddBuffer(VertexBuffer* buffer)

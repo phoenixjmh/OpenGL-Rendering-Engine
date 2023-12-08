@@ -14,22 +14,22 @@
 #include <vector>
 
 struct Camera {
-    Camera():
-     cameraPosition (glm::vec3(0.0, 0.0, 30.0f))
-    ,cameraFront (glm::vec3(0, 0, -1))
-    ,cameraUp (glm::vec3(0, 1, 0))
-    ,cameraTarget (glm::vec3(0, 0, 0))
-    ,cameraDirection (glm::normalize(cameraPosition - cameraTarget))
-    ,up (glm::vec3(0, 1, 0))
-    ,cameraRight (glm::normalize(glm::cross(up, cameraDirection)))
-    {};
-    glm::vec3 cameraPosition;
-    glm::vec3 cameraFront;
-    glm::vec3 cameraUp;
-    glm::vec3 cameraTarget;
-    glm::vec3 cameraDirection;
+    glm::vec3 camera_position;
+    glm::vec3 camera_front;
+    glm::vec3 camera_up;
+    glm::vec3 camera_target;
+    glm::vec3 camera_direction;
     glm::vec3 up;
-    glm::vec3 cameraRight;
+    glm::vec3 camera_right;
+    Camera():
+     camera_position (glm::vec3(0.0, 0.0, 30.0f))
+    ,camera_front (glm::vec3(0, 0, -1))
+    ,camera_up (glm::vec3(0, 1, 0))
+    ,camera_target (glm::vec3(0, 0, 0))
+    ,camera_direction (glm::normalize(camera_position - camera_target))
+    ,up (glm::vec3(0, 1, 0))
+    ,camera_right (glm::normalize(glm::cross(up, camera_direction)))
+    {}
 };
 class Renderer {
 public:
@@ -40,8 +40,8 @@ public:
     void DrawCube(float size, float xpos, float ypos, float zpos);
     void BeginDraw();
     void Present();
-    void init_mvp();
     void ModelMove(float scale, glm::vec3 position);
+    void DrawPlane(float size, glm::vec3 position);
     void DrawLight(float size, float xpos, float ypos);
     void Clean();
     void Render();
@@ -49,6 +49,8 @@ public:
 private:
     std::shared_ptr<Model> m_cube;
     std::shared_ptr<Model> m_light;
+    std::shared_ptr<Model> m_floor;
+
     glm::mat4 ModelMatrix;
     glm::mat4 ViewMatrix;
     glm::mat4 ProjectionMatrix;
@@ -56,17 +58,12 @@ private:
     Shader* m_light_shader = nullptr;
     Shader* m_shader = nullptr;
     GLFWwindow* window;
-    void processInput(GLFWwindow* window);
     int m_width;
     int m_height;
-    int create_window(const int width, const int height);
+    void init();
     int glad_init();
+    int create_window(const int width, const int height);
     void create_models();
     void create_shader();
-    unsigned int VBO, VAO, EBO;
-    void init();
-    void PresentFrame();
-    void create_circle();
-    void create_cube();
-    std::vector<unsigned> index_circle(int size);
+    void init_mvp();
 };

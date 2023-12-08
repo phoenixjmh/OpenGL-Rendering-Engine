@@ -9,7 +9,10 @@ VertexBuffer::VertexBuffer(const void* data, unsigned int size)
     glBufferData(GL_ARRAY_BUFFER, size * sizeof(float), data, GL_STATIC_DRAW);
 }
 
-VertexBuffer::~VertexBuffer() { UnBind(); }
+VertexBuffer::~VertexBuffer() {
+  UnBind();
+  //glDeleteVertexArrays(1,&m_RendererID);
+}
 
 void VertexBuffer::Bind()
 {
