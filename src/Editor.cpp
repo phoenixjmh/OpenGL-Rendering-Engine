@@ -1,7 +1,31 @@
 ﻿#include "Editor.h"
 
 #include <iostream>
+#include <string>
 
+void Editor::AddObjectTransformEditor(unsigned int index)
+{
+    
+    float* xpos = &Physics::all_sand[index].editor_pos.x;
+    float* ypos = &Physics::all_sand[index].editor_pos.y;
+    float* zpos = &Physics::all_sand[index].editor_pos.z;
+    
+    std::string str_x = "X: " + std::to_string(index);
+    std::string str_y = "Y: " + std::to_string(index);
+    std::string str_z = "Z: " + std::to_string(index);
+    //float& zpos = obj.pos.z;
+    ImGui::SliderFloat(str_x.c_str(), xpos, -10, 10);
+
+    ImGui::SliderFloat(str_y.c_str(), ypos, -10, 10);
+
+    ImGui::SliderFloat(str_z.c_str(), zpos, -10, 10);
+
+    ImGui::SliderFloat("Size:", &ui_size, 1, 10);
+    /*std::cout<<"OBJECT 1: XYZ:"<<Physics::all_sand[index].editor_pos.x<<"\n"<<xpos;*/
+   /* Physics::all_sand[index].editor_pos.x = xpos;
+    Physics::all_sand[index].editor_pos.y = ypos;
+    Physics::all_sand[index].editor_pos.z=zpos;*/
+}
 void Editor::BuildEditorWindow()
 {
     ImGui_ImplOpenGL3_NewFrame();
@@ -17,21 +41,20 @@ void Editor::BuildEditorWindow()
 
     ImGui::Checkbox("Camera Control", &camera_input);
 
-    if (ImGui::Button("Spawn Object")) { spawnCall = true; }
+    if (ImGui::Button("Spawn Object")) {
+        spawnCall = true;
+    }
 
     ImGui::SameLine();
 
-    ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io->Framerate
-                , io->Framerate);
+    ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io->Framerate, io->Framerate);
 
-    ImGui::SliderFloat("X:", &ui_xpos, -10, 10);
+    for (int i=0;i<Physics::all_sand.size();i++) {
 
-    ImGui::SliderFloat("Y:", &ui_ypos, -10, 10);
-    
-    ImGui::SliderFloat("Z:", &ui_zpos, -10, 10);
+        AddObjectTransformEditor(i);
+        ImGui::Dummy(ImVec2(0.0f,20.0f));
 
-    ImGui::SliderFloat("Size:", &ui_size, 1, 10);
-
+    }
     ImGui::End();
 }
 

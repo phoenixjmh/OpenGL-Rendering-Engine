@@ -1,5 +1,5 @@
 #pragma once
-#include "Circle.h"
+#include "PhysicsObject.h"
 #include <random>
 
 class Physics {

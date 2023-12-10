@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "IndexBuffer.h"
-#include "ShapeFactory.h";
+#include "ShapeFactory.h"
 #include "VertexArray.h"
 #include <glm/vec3.hpp>
 #include <memory>

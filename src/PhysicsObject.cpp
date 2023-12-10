@@ -1,4 +1,4 @@
-#include "Circle.h"
+#include "PhysicsObject.h"
 
 #include <iostream>
 
@@ -15,7 +15,8 @@ void PhysicsObject::update(float deltaTime)
     pos += vel * deltaTime;
 }
 
-void PhysicsObject::drop(glm::vec2 start)
+void PhysicsObject::Spawn(glm::vec2 start)
 {
     pos = prev_pos = start;
+    editor_pos = {0,0,0};
 }

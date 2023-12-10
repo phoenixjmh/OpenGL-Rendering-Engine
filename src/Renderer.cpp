@@ -3,6 +3,7 @@
 #include "Model.h"
 
 #include <vector>
+#include "Physics.h"
 #define LOG(x) std::cout << x << "\n";
 ShapeFactory shapeFactory;
 
@@ -18,9 +19,8 @@ void GLAPIENTRY MessageCallback(GLenum source, GLenum type, GLuint id,
 void Renderer::BeginDraw()
 {
     glEnable(GL_DEPTH_TEST);
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(0.2f, 0.1f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    m_shader->use();
 }
 
 /// End this draw cycle, present the frame.
@@ -40,13 +40,19 @@ void Renderer::ModelMove(float scale, glm::vec3 position)
     ModelMatrix = glm::scale(ModelMatrix, { scale * 2, scale * 2, scale * 2 });
 }
 
-void Renderer::DrawPlane(float size, glm::vec3 position)
+void Renderer::DrawPlane(float size, glm::vec3 position,const ShaderCommon common)
 {
     m_shader->use();
-    glm::vec3 light_position = glm::vec3 { 1.2, 1, 2 };
     m_shader->setVec3("objectColor", { 1, .3, .3 });
-    m_shader->setVec3("lightColor", { 1, 1, 1 });
-    m_shader->setVec3("lightPos", light_position);
+    m_shader->setVec3("lightColor", common.light_color);
+    m_shader->setVec3("lightPos", common.light_position);
+    m_shader->setVec3("material.ambient", { 1.0f, 0.5f, 0.31f });
+    m_shader->setVec3("material.diffuse", { 1.0f, 0.5f, 0.31f });
+    m_shader->setVec3("material.specular", { 0.5f, 0.5f, 0.5f });
+    m_shader->setFloat("material.shininess", 32.0f);
+    m_shader->setVec3("light.ambient", { 0.2f, 0.2f, 0.2f });
+    m_shader->setVec3("light.diffuse", { 0.5f, 0.5f, 0.5f });
+    m_shader->setVec3("light.specular", { 1.0f, 1.0f, 1.0f });
     init_mvp();
     m_floor->size = size;
     m_floor->position = position;
@@ -60,46 +66,68 @@ void Renderer::DrawPlane(float size, glm::vec3 position)
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-void Renderer::DrawLight(float size, float xpos, float ypos)
+void Renderer::DrawLight(float size,const ShaderCommon common) 
 {
     m_light_shader->use();
     init_mvp();
-    glm::vec3 light_position = { xpos, ypos, 2 };
     m_light->size = size;
-    m_light->position = light_position;
+    m_light->position = common.light_position;
     ModelMove(m_light->size, m_light->position);
     ModelViewProjection = ProjectionMatrix * ViewMatrix * ModelMatrix;
 
     m_light_shader->setMat4("ModelViewProjection", ModelViewProjection);
+    m_light_shader->setVec3("light_color", common.light_color);
 
     m_light->Bind();
     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 }
-void Renderer::DrawCube(float size, float xpos, float ypos, float zpos)
+void Renderer::DrawCube(float size, glm::vec3 position ,const ShaderCommon common)
 {
-    init_mvp();
     m_shader->use();
-    glm::vec3 position = { xpos, -ypos, zpos };
-    glm::vec3 light_position = glm::vec3 { 1.2, 1, 2 };
+    init_mvp();
     m_cube->size = size;
     m_cube->position = position;
     ModelMove(m_cube->size, m_cube->position);
     ModelViewProjection = ProjectionMatrix * ViewMatrix * ModelMatrix;
 
+    m_shader->setVec3("viewPos", camera.camera_position);
     m_shader->setVec3("objectColor", { 1, .3, .3 });
-    m_shader->setVec3("lightColor", { 1, 1, 1 });
-    m_shader->setVec3("lightPos", light_position);
-  m_shader->setVec3("viewPos",camera.camera_position);
-
+    m_shader->setVec3("lightColor", common.light_color);
+    m_shader->setVec3("lightPos", common.light_position);
+    m_shader->setVec3("material.ambient", { 1.0f, 0.5f, 0.31f });
+    m_shader->setVec3("material.diffuse", { 1.0f, 0.5f, 0.31f });
+    m_shader->setVec3("material.specular", { 0.5f, 0.5f, 0.5f });
+    m_shader->setFloat("material.shininess", 32.0f);
+    m_shader->setVec3("light.ambient", { 0.2f, 0.2f, 0.2f });
+    m_shader->setVec3("light.diffuse", { 0.5f, 0.5f, 0.5f });
+    m_shader->setVec3("light.specular", { 1.0f, 1.0f, 1.0f });
     m_shader->setMat4("ModelViewProjection", ModelViewProjection);
     m_shader->setMat4("ModelMatrix", ModelMatrix);
 
     m_cube->Bind();
-    glDrawArrays(GL_TRIANGLES,0,36);
-    //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
-    DrawPlane(5, { 0, -4, 1 });
 
-    DrawLight(0.5, light_position.x, light_position.y);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+}
+
+void Renderer::DrawScene(Physics field,float alpha)
+{
+    ShaderCommon shader_common;
+    shader_common.light_color={1,0,1};
+    shader_common.light_position={1.2,1,2};
+
+    for (auto& s : Physics::all_sand) {
+        glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
+        glm::vec3 render_position={interpolatedPosition.x,interpolatedPosition.y,1};
+
+        //when working in editor, we store different positions
+
+        DrawCube(s.radius, s.editor_pos,shader_common);
+        
+        // DrawCube(s.radius, render_position);
+    }
+    DrawPlane(5, { 0, -4, 1 },shader_common);
+
+    DrawLight(0.5,shader_common);
 }
 
 void Renderer::create_models()
@@ -112,23 +140,23 @@ void Renderer::create_models()
 
 void Renderer::init()
 {
-    create_window(800, 800);
+    create_window(1000,1000);
     glad_init();
     create_shader();
-//#define DEBUG_GL
+// #define DEBUG_GL
 #ifdef DEBUG_GL
     glEnable(GL_DEBUG_OUTPUT);
     glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
     glDebugMessageCallback(MessageCallback, 0);
 #endif
-   
+
     create_models();
     glfwSwapInterval(1);
 }
 
 void Renderer::Clean()
 {
-    
+
     m_shader->deleteProgram();
     m_light_shader->deleteProgram();
     delete m_shader;

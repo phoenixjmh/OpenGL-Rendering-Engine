@@ -11,18 +11,6 @@
 int PhysicsObject::nxt_id = 0;
 #define LOG(x) std::cout << x << "\n";
 
-void RenderPositions(GLFWwindow* window, Renderer* renderer, Editor* editor, float alpha)
-{
-    glfwMakeContextCurrent(renderer->GetWindow());
-    int window_width;
-    int window_height;
-    glfwGetWindowSize(window, &window_width, &window_height);
-    for (auto& s : Physics::all_sand) {
-        glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
-
-        renderer->DrawCube(s.radius, interpolatedPosition.x, interpolatedPosition.y, 1);
-    }
-}
 
 Mouse mouse;
 float Mouse::lastX = 400;
@@ -37,7 +25,7 @@ std::vector<PhysicsObject> Physics::all_sand;
 
 int main()
 {
-    Physics engine;
+    Physics field;
     renderer = new Renderer();
     GLFWwindow* window = renderer->GetWindow();
     Editor editor(window);
@@ -71,14 +59,14 @@ int main()
             PhysicsObject grain(editor.ui_size);
             Physics::all_sand.push_back(grain);
 
-            Physics::all_sand.back().drop({ editor.ui_xpos, editor.ui_ypos });
+            Physics::all_sand.back().Spawn({ editor.ui_xpos, editor.ui_ypos });
             editor.spawnCall = false;
         }
 
         while (accumulator > dt) {
             Physics::previousToCurrent();
             if (editor.debug_is_simulate)
-                engine.Update(dt);
+                field.Update(dt);
 
             t += dt;
             accumulator -= dt;
@@ -88,9 +76,7 @@ int main()
 
         editor.Render();
 
-        RenderPositions(window, renderer, &editor, alpha);
-
-        renderer->DrawCube(editor.ui_size, editor.ui_xpos, editor.ui_ypos, editor.ui_zpos);
+        renderer->DrawScene(field,alpha);
 
         renderer->Present();
 
@@ -120,11 +106,11 @@ void processInput(GLFWwindow* window, Renderer* renderer, Editor& editor, float 
         renderer->camera.camera_position -= cameraSpeed * renderer->camera.camera_front;
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
         renderer->camera.camera_position -= glm::normalize(
-                                               glm::cross(renderer->camera.camera_front, renderer->camera.camera_up))
+                                                glm::cross(renderer->camera.camera_front, renderer->camera.camera_up))
             * cameraSpeed;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         renderer->camera.camera_position += glm::normalize(
-                                               glm::cross(renderer->camera.camera_front, renderer->camera.camera_up))
+                                                glm::cross(renderer->camera.camera_front, renderer->camera.camera_up))
             * cameraSpeed;
 
     // LISTEN MOUSE

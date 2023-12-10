@@ -17,7 +17,7 @@ target_include_directories(${PROJECT_NAME}
   src/
   PUBLIC
   src/vendor/
-  PUBLIC /shaders
+  #PUBLIC /shaders
   )
 target_link_directories(${PROJECT_NAME}
   PUBLIC external/glfw/include
@@ -25,7 +25,7 @@ target_link_directories(${PROJECT_NAME}
   PUBLIC src/
   PUBLIC src/vendor/
   PUBLIC external/
-  PUBLIC /shaders
+ # PUBLIC /shaders
   )
 target_link_libraries(${PROJECT_NAME} glfw )
 

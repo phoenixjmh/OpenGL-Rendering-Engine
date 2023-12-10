@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "Physics.h"
 #include "Mouse.h"
 #include "vendor/imgui/imgui.h"
 #include "vendor/imgui/imgui_impl_glfw.h"
@@ -11,6 +12,7 @@ public:
                                  camera_input(false), spawnCall(false) { init_imgui(window); }
 
     void BuildEditorWindow();
+    void AddObjectTransformEditor(unsigned int  index);
     void Render();
     void Shutdown();
     float ui_xpos;

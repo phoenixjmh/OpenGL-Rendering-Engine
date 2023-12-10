@@ -6,7 +6,11 @@
 #include <sstream>
 #include <string>
 #include "glad/glad.h"
-
+struct ShaderCommon{
+    ShaderCommon():light_position(0,0,0),light_color(1,1,1){}
+glm::vec3 light_position;
+glm::vec3 light_color;
+};
 class Shader {
  public:
   unsigned int ID;

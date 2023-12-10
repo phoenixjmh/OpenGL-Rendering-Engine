@@ -12,6 +12,7 @@
 #include "Model.h"
 
 #include <vector>
+class Physics;
 
 struct Camera {
     glm::vec3 camera_position;
@@ -37,12 +38,13 @@ public:
     Camera camera;
     GLFWwindow* GetWindow() { return window; }
     void DrawCircle(float size, float posx, float posy);
-    void DrawCube(float size, float xpos, float ypos, float zpos);
+    void DrawScene(Physics field,float alpha);
     void BeginDraw();
     void Present();
     void ModelMove(float scale, glm::vec3 position);
-    void DrawPlane(float size, glm::vec3 position);
-    void DrawLight(float size, float xpos, float ypos);
+    void DrawPlane(float size, glm::vec3 position,const ShaderCommon common);
+    void DrawLight(float size,const ShaderCommon common);
+void DrawCube(float size, glm::vec3 position,const ShaderCommon common);
     void Clean();
     void Render();
 

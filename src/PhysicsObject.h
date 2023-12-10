@@ -1,6 +1,7 @@
 #pragma once
 #include <math.h>
 #include "glm/vec2.hpp"
+#include "glm/vec3.hpp"
 class PhysicsObject
 {
 public:
@@ -9,12 +10,13 @@ public:
     float mass;
     glm::vec2 acceleration;
     float radius;
+    glm::vec3 editor_pos;
     glm::vec2 prev_pos;
     glm::vec2 pos;
     glm::vec2 vel;
     glm::vec2 prev_vel;
     void update(float deltaTime);
-    void drop(glm::vec2 start);
+    void Spawn(glm::vec2 start);
 
     bool operator==(const PhysicsObject& other) const { return (id == other.id); }
 
