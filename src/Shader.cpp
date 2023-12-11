@@ -29,8 +29,6 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     const char* vShaderCode = vertexCode.c_str();
     const char* fShaderCode = fragmentCode.c_str();
 
-    std::cout << vShaderCode << "\n\n";
-    std::cout << fShaderCode<< "\n\n";
     
     unsigned int vertex, fragment;
     int success;
@@ -42,7 +40,8 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n";
+        std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n"
+      <<infoLog<<"\n";
     }
     
 
@@ -52,7 +51,8 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(fragment, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n";
+        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n"
+    <<infoLog<<"\n";
     }
 
     ID = glCreateProgram();

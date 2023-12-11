@@ -6,7 +6,7 @@
 class Texture {
 public:
   Texture(const char *path);
-  ~Texture();
+  ~Texture()=default;
   void Bind();
 
 private:

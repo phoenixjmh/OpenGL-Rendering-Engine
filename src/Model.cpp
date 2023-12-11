@@ -18,6 +18,7 @@ void Model::AddTextureImage(const char* path){
 
   m_Texture = std::make_shared<Texture>(path);
 }
+
 void Model::buildShape()
 {
     if (type == "cube") {
