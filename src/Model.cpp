@@ -14,6 +14,10 @@ Model::~Model() = default;
 void Model::Translate() { }
 void Model::Scale() { }
 
+void Model::AddTextureImage(const char* path){
+
+  m_Texture = std::make_shared<Texture>(path);
+}
 void Model::buildShape()
 {
     if (type == "cube") {

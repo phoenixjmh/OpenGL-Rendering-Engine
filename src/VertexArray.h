@@ -3,6 +3,8 @@
 #include <glad/glad.h>
 #include <vector>
 
+#include "Texture.h"
+
 
 class VertexArray {
 public:
