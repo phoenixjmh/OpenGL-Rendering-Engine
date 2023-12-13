@@ -5,16 +5,22 @@
 
 #include "Texture.h"
 
+struct VAFlags {
+    VAFlags(): hasTexture(true){};
+    bool hasTexture;
+};
 
 class VertexArray {
 public:
-  VertexArray();
+  VertexArray(VAFlags flags);
   ~VertexArray();
   void AddBuffer(VertexBuffer *buffer);
   void Bind();
   void Unbind();
   
 private:
+
+  VAFlags m_flags;
   unsigned int m_RendererID;
   VertexBuffer* vb;
 };

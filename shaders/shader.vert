@@ -8,7 +8,7 @@ uniform mat4 ModelViewProjection;
 uniform mat4 ModelMatrix;
 out vec3 Normal;
 out vec3 FragPos;
-out vec2 TexPos;
+out vec2 TexCoord;
 
 
 void main()
@@ -16,7 +16,7 @@ void main()
     FragPos = vec3(ModelMatrix* vec4(aPos,1.0));
     Normal=mat3(transpose(inverse(ModelMatrix))) * aNormal;
     gl_Position = ModelViewProjection* vec4(FragPos, 1.0);
-    TexPos=aTex;
+    TexCoord=aTex;
 
 }
 

@@ -5,13 +5,13 @@
 #include "vendor/stb_image/stb_image.h"
 class Texture {
 public:
-  Texture(const char *path);
+  Texture(const char *path,const unsigned int width,const unsigned int height);
   ~Texture()=default;
   void Bind();
 
 private:
   const char *filePath;
-  int width, height, nrChannels;
+  int m_Width, m_Height, nrChannels;
   unsigned int m_RendererID;
   unsigned int texture;
   unsigned char *imageData;

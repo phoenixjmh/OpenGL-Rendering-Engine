@@ -1,6 +1,6 @@
 #include "Texture.h"
 
-Texture::Texture(const char *path):filePath(path) {
+Texture::Texture(const char *path,const unsigned int width,const unsigned int height):filePath(path), m_Width(width),m_Height(height) {
   std::cout<<"Entered Tex class\n";
   glGenTextures(1, &texture);
   Bind();
@@ -14,10 +14,10 @@ Texture::Texture(const char *path):filePath(path) {
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
   std::string appendedFilePath = "../../"+static_cast<std::string>(filePath);
-  imageData = stbi_load(appendedFilePath.c_str(), &width, &height, &nrChannels, 0);
+  imageData = stbi_load(appendedFilePath.c_str(), &m_Width, &m_Height, &nrChannels, 0);
   if (imageData) {
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB,
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_Width, m_Height, 0, GL_RGBA,
                  GL_UNSIGNED_BYTE, imageData);
     glGenerateMipmap(GL_TEXTURE_2D);
 
