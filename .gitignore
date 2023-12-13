@@ -15,7 +15,8 @@ _deps
 
 # all cache files
 
-.cache
+**/.cache
+**/.cache/
 
 # Compiled Object files
 **/.DS_Store
@@ -105,3 +106,4 @@ test/test_runner
 *.out
 *.app
 [Bb][Uu][Ii][Ll][Dd]/
+*.idx
