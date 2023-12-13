@@ -13,6 +13,10 @@ _deps
 # Visual studio files
 .vs
 
+# all cache files
+
+.cache
+
 # Compiled Object files
 **/.DS_Store
 *.slo
