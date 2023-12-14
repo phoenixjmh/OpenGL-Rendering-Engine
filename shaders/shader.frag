@@ -2,13 +2,17 @@
 in vec2 TexCoord;
 in vec3 Normal;
 in vec3 FragPos;
-out vec4 FragColor;
 uniform vec3 objectColor;
 uniform vec3 lightColor;
 uniform vec3 viewPos;
 uniform vec3 lightPos;
 uniform int useTexture;
 uniform sampler2D inputTex;
+out vec4 FragColor;
+
+uniform sampler2D texture_diffuse1;
+uniform sampler2D texture_specular1;
+uniform sampler2D texture_normal1;
 
 
 
@@ -42,9 +46,7 @@ uniform Material material;
 void main()
 {
 
-    if(useTexture==1)
-    {
-	//ambient
+ 	//ambient
 		vec3 ambient = light.ambient * vec3(texture(material.diffuse,TexCoord));
 
 	//diffuse
@@ -72,13 +74,14 @@ void main()
 		specular*=attenuation;
 
 		vec3 result = (ambient + diffuse + specular);
-		FragColor =vec4(result,1.0);
+		vec4 diffTex = texture(texture_diffuse1,TexCoord);
+		vec4 specTex = texture(texture_specular1,TexCoord);
+		vec4 normTex = texture(texture_normal1,TexCoord);
+		vec4 resultTex = diffTex;
+		FragColor = resultTex;
+	//	FragColor = vec4(1,0,0,1);
     }
-    else{
-	   vec3 result = vec3(texture(inputTex,TexCoord));
-		FragColor = vec4(result,1.0);
-    }
-}
+
 
 
 

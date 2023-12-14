@@ -18,8 +18,10 @@ set(SOURCES
   ${PROJECT_SOURCE_DIR}/src/Texture.cpp
   ${PROJECT_SOURCE_DIR}/src/VertexArray.cpp
   ${PROJECT_SOURCE_DIR}/src/VertexBuffer.cpp
+  ${PROJECT_SOURCE_DIR}/src/Mesh.cpp
 
   )
+
 
 set(HEADERS 
   ${PROJECT_SOURCE_DIR}/src/Editor.h
@@ -33,6 +35,7 @@ set(HEADERS
   ${PROJECT_SOURCE_DIR}/src/Texture.h
   ${PROJECT_SOURCE_DIR}/src/VertexArray.h
   ${PROJECT_SOURCE_DIR}/src/VertexBuffer.h
+  ${PROJECT_SOURCE_DIR}/src/Mesh.h
 
   )
 # file( GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
@@ -42,7 +45,6 @@ file(GLOB_RECURSE VENDOR
   ${PROJECT_SOURCE_DIR}/src/vendor/*.c 
   ${PROJECT_SOURCE_DIR}/src/vendor/*.cpp
 )
-
 
 source_group("Vendor" FILES ${VENDOR})
 source_group("Sources" FILES ${SOURCES})

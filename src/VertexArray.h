@@ -3,7 +3,11 @@
 #include <glad/glad.h>
 #include <vector>
 
-#include "Texture.h"
+//#include "Texture.h"
+
+
+
+
 
 struct VAFlags {
     VAFlags(): hasTexture(true){};
@@ -13,7 +17,8 @@ struct VAFlags {
 class VertexArray {
 public:
   VertexArray(VAFlags flags);
-  ~VertexArray();
+  VertexArray();
+  ~VertexArray()=default;
   void AddBuffer(VertexBuffer *buffer);
   void Bind();
   void Unbind();

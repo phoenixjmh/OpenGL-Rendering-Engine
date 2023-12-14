@@ -15,6 +15,8 @@ _deps
 
 # all cache files
 
+.cache/
+.cache
 **/.cache
 **/.cache/
 
@@ -106,4 +108,5 @@ test/test_runner
 *.out
 *.app
 [Bb][Uu][Ii][Ll][Dd]/
+*.idx
 *.idx

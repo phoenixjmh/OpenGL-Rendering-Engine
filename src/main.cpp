@@ -39,7 +39,6 @@ int main()
 
     while (!glfwWindowShouldClose(window)) {
         // frame logic
-        glfwPollEvents();
         auto newTime = glfwGetTime();
         auto frameTime = newTime - currentTime;
 
@@ -81,6 +80,7 @@ int main()
 
         renderer->Present();
 
+        glfwPollEvents();
     }
     editor.Shutdown();
 

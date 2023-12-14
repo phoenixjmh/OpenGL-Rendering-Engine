@@ -1,13 +1,18 @@
 #include "VertexArray.h"
+
 VertexArray::VertexArray(VAFlags flags)
     : m_flags(flags)
 
 {
     glGenVertexArrays(1, &m_RendererID);
 }
-VertexArray::~VertexArray()
+
+VertexArray::VertexArray()
 {
-    // glDeleteVertexArrays(1,&m_RendererID);
+    VAFlags flags;
+    flags.hasTexture = true;
+    m_flags = flags;
+    glGenVertexArrays(1, &m_RendererID);
 }
 
 void VertexArray::AddBuffer(VertexBuffer* buffer)
@@ -17,25 +22,22 @@ void VertexArray::AddBuffer(VertexBuffer* buffer)
     vb->Bind();
     // tell our object how to navigate the vertex
     if (m_flags.hasTexture) {
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
         glEnableVertexAttribArray(0);
-        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
-            (void*)(3 * sizeof(float)));
+
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
+
         glEnableVertexAttribArray(1);
 
-    } else {
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float),
-            (void*)(3 * sizeof(float)));
-        glEnableVertexAttribArray(1);
-    }
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+            (void*)offsetof(Vertex, Normal));
 
-    if (m_flags.hasTexture) {
-        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
         glEnableVertexAttribArray(2);
+
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+            (void*)offsetof(Vertex, TexCoords));
     }
 }
+
 
 void VertexArray::Bind() { glBindVertexArray(m_RendererID); }
 void VertexArray::Unbind() { glBindVertexArray(0); }

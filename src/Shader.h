@@ -9,10 +9,10 @@
 struct ShaderCommon {
     ShaderCommon()
         : light_position(0, 0, 0)
-        , light_color(1, 1, 1),
-        lightConstant(1),
-        lightLinear(0.09f),
-        lightQuadratic(0.032f)
+        , light_color(1, 1, 1)
+        , lightConstant(1)
+        , lightLinear(0.09f)
+        , lightQuadratic(0.032f)
     {
     }
     glm::vec3 light_position;
