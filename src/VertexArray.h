@@ -10,16 +10,16 @@
 
 
 struct VAFlags {
-    VAFlags(): hasTexture(true){};
-    bool hasTexture;
+      bool hasTexture;
+  PrimitiveShape shape;
 };
 
 class VertexArray {
 public:
   VertexArray(VAFlags flags);
-  VertexArray();
+  VertexArray(VertexBuffer vertex_buffer);
   ~VertexArray()=default;
-  void AddBuffer(VertexBuffer *buffer);
+  void AddBuffer();
   void Bind();
   void Unbind();
   
@@ -27,5 +27,5 @@ private:
 
   VAFlags m_flags;
   unsigned int m_RendererID;
-  VertexBuffer* vb;
+  VertexBuffer vb;
 };

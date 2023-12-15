@@ -1,6 +1,6 @@
-//#include "Texture.h"
+// #include "TextureMap.h"
 //
-//Texture::Texture(const char *path,const unsigned int width,const unsigned int height):filePath(path), m_Width(width),m_Height(height) {
+// TextureMap::TextureMap(const char *path,const unsigned int width,const unsigned int height):filePath(path), m_Width(width),m_Height(height) {
 //  std::cout<<"Entered Tex class\n";
 //  glGenTextures(1, &texture);
 //  Bind();
@@ -27,5 +27,5 @@
 //  }
 //
 //  stbi_image_free(imageData);
-//}
-//void Texture::Bind() { glBindTexture(GL_TEXTURE_2D, texture); }
+// }
+// void TextureMap::Bind() { glBindTexture(GL_TEXTURE_2D, texture); }

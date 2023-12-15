@@ -1,25 +1,25 @@
 #include "VertexArray.h"
 
-VertexArray::VertexArray(VAFlags flags)
-    : m_flags(flags)
+//VertexArray::VertexArray(VAFlags flags)
+//    : m_flags(flags)
+//
+//{
+//    glGenVertexArrays(1, &m_RendererID);
+//}
 
-{
-    glGenVertexArrays(1, &m_RendererID);
-}
-
-VertexArray::VertexArray()
+VertexArray::VertexArray(VertexBuffer vertex_buffer):vb(vertex_buffer)
 {
     VAFlags flags;
     flags.hasTexture = true;
     m_flags = flags;
     glGenVertexArrays(1, &m_RendererID);
+    AddBuffer();
 }
 
-void VertexArray::AddBuffer(VertexBuffer* buffer)
+void VertexArray::AddBuffer()
 {
     Bind();
-    vb = buffer;
-    vb->Bind();
+    vb.Bind();
     // tell our object how to navigate the vertex
     if (m_flags.hasTexture) {
         glEnableVertexAttribArray(0);
