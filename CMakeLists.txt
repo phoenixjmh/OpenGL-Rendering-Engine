@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.4...3.20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project(Phoesics)
-
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 add_subdirectory(external/glfw)
 add_subdirectory(external/assimp)
 
@@ -15,10 +15,12 @@ set(SOURCES
   ${PROJECT_SOURCE_DIR}/src/Renderer.cpp
   ${PROJECT_SOURCE_DIR}/src/Shader.cpp
   ${PROJECT_SOURCE_DIR}/src/ShapeFactory.cpp
-  ${PROJECT_SOURCE_DIR}/src/Texture.cpp
+  ${PROJECT_SOURCE_DIR}/src/TextureMap.cpp
   ${PROJECT_SOURCE_DIR}/src/VertexArray.cpp
   ${PROJECT_SOURCE_DIR}/src/VertexBuffer.cpp
   ${PROJECT_SOURCE_DIR}/src/Mesh.cpp
+  ${PROJECT_SOURCE_DIR}/src/Logger.cpp
+
 
   )
 
@@ -32,10 +34,11 @@ set(HEADERS
   ${PROJECT_SOURCE_DIR}/src/Renderer.h
   ${PROJECT_SOURCE_DIR}/src/Shader.h
   ${PROJECT_SOURCE_DIR}/src/ShapeFactory.h
-  ${PROJECT_SOURCE_DIR}/src/Texture.h
+  ${PROJECT_SOURCE_DIR}/src/TextureMap.h
   ${PROJECT_SOURCE_DIR}/src/VertexArray.h
   ${PROJECT_SOURCE_DIR}/src/VertexBuffer.h
   ${PROJECT_SOURCE_DIR}/src/Mesh.h
+  ${PROJECT_SOURCE_DIR}/src/Logger.h
 
   )
 # file( GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
