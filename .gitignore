@@ -15,6 +15,7 @@ _deps
 
 # all cache files
 
+.idea/
 .cache/
 .cache
 **/.cache
