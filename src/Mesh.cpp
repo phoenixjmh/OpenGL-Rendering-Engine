@@ -8,8 +8,8 @@ void printTextureInfo(std::vector<Texture> textures)
         Log("Texture: \n","ID:",tex.id,"Path: ", tex.path,"Type: ", tex.type);
     }
 }
-Mesh::Mesh(vector<Vertex> vertices, vector<unsigned int> indices,
-    vector<Texture> textures)
+Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices,
+    std::vector<Texture> textures)
     : Vertices(vertices)
     , Indices(indices)
     , Textures(textures)
@@ -27,9 +27,9 @@ void Mesh::Draw(Shader& shader)
     unsigned int heightNr = 1;
     for (auto i = 0; i < Textures.size(); i++) {
         glActiveTexture(GL_TEXTURE0 + i);
-        string number;
-        string name = Textures[i].type;
-        string material_name;
+        std::string number;
+        std::string name = Textures[i].type;
+        std::string material_name;
         if (name == "texture_diffuse") {
             material_name = "material.diffuse";
             number = std::to_string(diffuse_nr++);
@@ -42,8 +42,6 @@ void Mesh::Draw(Shader& shader)
             glBindTexture(GL_TEXTURE_2D, Textures[i].id);
             
         }
-        
-             
     }
  
        glActiveTexture(GL_TEXTURE0);

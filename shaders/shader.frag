@@ -16,6 +16,7 @@ out vec4 FragColor;
 
 struct Material
 {
+	vec3 albedo;
     vec3 ambient;
     sampler2D diffuse1;
     sampler2D specular1;
@@ -44,7 +45,7 @@ void main()
 {
 
  	//ambient
-		vec3 ambient = light.ambient*(0.2) * vec3(texture(material.diffuse1,TexCoord));
+		vec3 ambient = light.ambient*(0.4) * vec3(texture(material.diffuse1,TexCoord));
 
 	//diffuse
 		vec3 norm = normalize(Normal);
@@ -70,7 +71,11 @@ void main()
 		diffuse*= attenuation;
 		specular*=attenuation;
 
-		vec4 result = vec4(vec3(ambient + diffuse + specular),1.0f);
+		ambient*=material.albedo;
+		diffuse*=material.albedo;
+		specular*=material.albedo;
+
+		vec4 result = vec4(vec3((ambient + diffuse + specular)),1.0f);
 		
 		
 		FragColor = result;

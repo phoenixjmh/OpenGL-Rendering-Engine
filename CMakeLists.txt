@@ -15,7 +15,6 @@ set(SOURCES
   ${PROJECT_SOURCE_DIR}/src/Renderer.cpp
   ${PROJECT_SOURCE_DIR}/src/Shader.cpp
   ${PROJECT_SOURCE_DIR}/src/ShapeFactory.cpp
-  ${PROJECT_SOURCE_DIR}/src/TextureMap.cpp
   ${PROJECT_SOURCE_DIR}/src/VertexArray.cpp
   ${PROJECT_SOURCE_DIR}/src/VertexBuffer.cpp
   ${PROJECT_SOURCE_DIR}/src/Mesh.cpp
@@ -34,7 +33,6 @@ set(HEADERS
   ${PROJECT_SOURCE_DIR}/src/Renderer.h
   ${PROJECT_SOURCE_DIR}/src/Shader.h
   ${PROJECT_SOURCE_DIR}/src/ShapeFactory.h
-  ${PROJECT_SOURCE_DIR}/src/TextureMap.h
   ${PROJECT_SOURCE_DIR}/src/VertexArray.h
   ${PROJECT_SOURCE_DIR}/src/VertexBuffer.h
   ${PROJECT_SOURCE_DIR}/src/Mesh.h

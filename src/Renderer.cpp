@@ -9,14 +9,6 @@
 #define LOG(x) std::cout << x << "\n";
 ShapeFactory shapeFactory;
 
-void GLAPIENTRY MessageCallback(GLenum source, GLenum type, GLuint id,
-    GLenum severity, GLsizei length,
-    const GLchar* message, const void* userParam)
-{
-    std::cout << "SOURCE::" << source << " | TYPE:: " << type
-              << " | LOG::" << message << "\n";
-}
-
 /// Any calls to renderer draw functions will not apply before this
 void Renderer::BeginDraw()
 {
@@ -24,6 +16,30 @@ void Renderer::BeginDraw()
     glClearColor(0, 0, 0, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     // m_shader->use();
+}
+
+void Renderer::create_shader()
+{
+    m_shader = new Shader("shaders/shader.vert", "shaders/shader.frag");
+   NOLIGHTING = new Shader("shaders/shader.vert","shaders/NOLIGHTING.frag");
+    // m_light_shader = new Shader("shaders/lighting.vert",
+    // "shaders/lighting.frag");
+}
+
+void Renderer::create_models()
+{
+    VAFlags model_flags = { false, NONE };
+
+    m_sphere = std::make_shared<Model>("models/sphere/sphere.obj", model_flags);
+
+    //m_sphere = std::make_shared<Model>("models/backpack.obj", model_flags);
+
+    //m_gun=std::make_shared<Model>("models/SlicerGunWithHandleVersion2.obj",model_flags);
+    
+
+    VAFlags primitive_flags = { false, CUBE };
+
+    //m_cube = std::make_shared<Model>("wherever", primitive_flags);
 }
 
 /// End this draw cycle, present the frame.
@@ -87,40 +103,49 @@ void Renderer::ModelMove(float scale, glm::vec3 position)
 //     m_light->Bind();
 //     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 // }
-void Renderer::DrawCube(float size, glm::vec3 position,
+void Renderer::DrawObject(float size, glm::vec3 position,
     const ShaderCommon common)
 {
-    m_shader->use();
+    Model activeModel=*m_sphere;
+    Shader activeShader = *m_shader;
+    if(NO_LIGHTING)
+        activeShader=*NOLIGHTING;
+    activeShader.use();
+    //m_shader->use();
     init_mvp();
-    m_cube->size = size;
-    m_cube->position = position;
-    ModelMove(m_cube->size, m_cube->position);
+    activeModel.Size = size;
+    activeModel.Position = position;
+    ModelMatrix = glm::scale(ModelMatrix,{0.3,0.3,0.3});
+    ModelMove(activeModel.Size, activeModel.Position);
     ModelViewProjection = ProjectionMatrix * ViewMatrix * ModelMatrix;
 
-    m_shader->setInt("useTexture", 1);
-    m_shader->setVec3("viewPos", camera.camera_position);
-    m_shader->setVec3("objectColor", { 1, .3, .3 });
-    m_shader->setVec3("lightColor", common.light_color);
-    m_shader->setFloat("light.constant", 1.0f);
-    m_shader->setFloat("light.linear", 0.09f);
-    m_shader->setFloat("light.quadratic", 0.032f);
-    m_shader->setVec3("light.position", common.light_position);
-    m_shader->setVec3("light.direction", { -0.2f, -1.0f, -0.3f });
-    m_shader->setFloat("material.shininess", 32.0f);
-    m_shader->setVec3("light.ambient", { 1, 1, 1 });
-    m_shader->setVec3("light.diffuse", { 0.5f, 0.5f, 0.5f });
-    m_shader->setVec3("light.specular", { 1.0f, 1.0f, 1.0f });
-    m_shader->setMat4("ModelViewProjection", ModelViewProjection);
-    m_shader->setMat4("ModelMatrix", ModelMatrix);
+    activeShader.setInt("useTexture", 1);
+    activeShader.setVec3("viewPos", camera.camera_position);
+    activeShader.setVec3("objectColor", { 1, .3, .3 });
+    activeShader.setVec3("lightColor", common.light_color);
+    activeShader.setFloat("light.constant", 1.0f);
+    activeShader.setFloat("light.linear", 0.09f);
+    activeShader.setFloat("light.quadratic", 0.032f);
+    activeShader.setVec3("light.position", common.light_position);
+    activeShader.setVec3("light.direction", { -0.2f, -1.0f, -0.3f });
+    activeShader.setVec3("material.albedo", {1,0,0});
+    activeShader.setFloat("material.shininess", 32.0f);
+    activeShader.setVec3("light.ambient", { 1, 1, 1 });
+    activeShader.setVec3("light.diffuse", { 0.5f, 0.5f, 0.5f });
+    activeShader.setVec3("light.specular", { 1.0f, 1.0f, 1.0f });
+    activeShader.setMat4("ModelViewProjection", ModelViewProjection);
+    activeShader.setMat4("ModelMatrix", ModelMatrix);
 
-    m_sphere->Draw(*m_shader);
+    // m_sphere->Draw(*m_shader);
+  activeModel.Draw(activeShader);
+    //m_gun->Draw(activeShader);
 
     /*m_cube->Draw(*m_shader);*/
 }
 
 void Renderer::DrawScene(Physics field, float alpha)
 {
-    
+
     ShaderCommon shader_common;
     shader_common.light_color = { 1, 1, 1 };
     shader_common.light_position = { 1.2, 1, 2 };
@@ -130,37 +155,11 @@ void Renderer::DrawScene(Physics field, float alpha)
         glm::vec3 render_position = { interpolatedPosition.x, interpolatedPosition.y,
             1 };
 
-        DrawCube(s.radius, s.editor_pos, shader_common);
+        DrawObject(0.3, s.editor_pos, shader_common);
     }
     // DrawPlane(5, { 0, -4, 1 }, shader_common);
 
     // DrawLight(0.5, shader_common);
-}
-
-void Renderer::create_models()
-{
-    VAFlags backpack_flags={false,NONE};
-
-     m_sphere = std::make_shared<Model>("models/backpack.obj",backpack_flags);
-
-    VAFlags cube_flags = { false, CUBE };
-
-    m_cube = std::make_shared<Model>("wherever", cube_flags);
-
-    /* VAFlags floorFlags;
-     VAFlags lightFlags;
-     Material BoxMaterial("textures/wood.png", "textures/wood-spec.png", 1000,
-     1000);
-
-     floorFlags.hasTexture = false;
-     lightFlags.hasTexture = false;
-
-     m_cube = std::make_shared<Model>("cube_no_index");
-
-     m_cube->SetMaterial(BoxMaterial);
-
-     m_floor = std::make_shared<Model>("plane", floorFlags);*/
-    /*m_light = std::make_shared<Model>("cube", lightFlags);*/
 }
 
 void Renderer::init()
@@ -218,11 +217,4 @@ int Renderer::glad_init()
     }
 
     return 0;
-}
-
-void Renderer::create_shader()
-{
-    m_shader = new Shader("shaders/shader.vert", "shaders/shader.frag");
-    // m_light_shader = new Shader("shaders/lighting.vert",
-    // "shaders/lighting.frag");
 }

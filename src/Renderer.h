@@ -39,7 +39,7 @@ struct Camera {
 };
 class Renderer {
 public:
-    Renderer() { init(); }
+    Renderer():NO_LIGHTING(false) { init(); }
     Camera camera;
     GLFWwindow* GetWindow() { return window; }
     void DrawCircle(float size, float posx, float posy);
@@ -49,13 +49,14 @@ public:
     void ModelMove(float scale, glm::vec3 position);
     void DrawPlane(float size, glm::vec3 position, const ShaderCommon common);
     void DrawLight(float size, const ShaderCommon common);
-    void DrawCube(float size, glm::vec3 position, const ShaderCommon common);
+    void DrawObject(float size, glm::vec3 position, const ShaderCommon common);
     void Clean();
     void Render();
+    bool NO_LIGHTING;
 
 private:
     std::shared_ptr<Model> m_sphere;
-
+    std::shared_ptr<Model>m_gun;
     std::shared_ptr<Model> m_cube;
     std::shared_ptr<Model> m_light;
     std::shared_ptr<Model> m_floor;
@@ -66,6 +67,7 @@ private:
     glm::mat4 ModelViewProjection;
     Shader* m_light_shader = nullptr;
     Shader* m_shader = nullptr;
+  Shader* NOLIGHTING = nullptr;
     GLFWwindow* window;
     int m_width;
     int m_height;
@@ -75,4 +77,16 @@ private:
     void create_models();
     void create_shader();
     void init_mvp();
+
 };
+
+//Helpers
+
+inline void GLAPIENTRY MessageCallback(GLenum source, GLenum type, GLuint id,
+    GLenum severity, GLsizei length,
+    const GLchar* message, const void* userParam)
+{
+    std::cout << "SOURCE::" << source << " | TYPE:: " << type
+              << " | LOG::" << message << "\n";
+}
+

@@ -71,6 +71,14 @@ int main()
             t += dt;
             accumulator -= dt;
         }
+        if (!editor.renderer_lighting)
+        {
+            renderer->NO_LIGHTING=true;
+        }
+        else
+        {
+            renderer->NO_LIGHTING=false;
+        }
 
         const double alpha = accumulator / dt;
 

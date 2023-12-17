@@ -1,0 +1,6 @@
+  SHADOWS
+
+Shadow mapping
+
+This technique of rendering shadows is the quick way, and the standard for older games.
+- Render the scene from the perspective of the camera, and anything that is not visible is seen as "shaded".

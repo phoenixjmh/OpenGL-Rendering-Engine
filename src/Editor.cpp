@@ -41,6 +41,8 @@ void Editor::BuildEditorWindow()
 
     ImGui::Checkbox("Camera Control", &camera_input);
 
+    ImGui::Checkbox("Lighting",&renderer_lighting);
+
     if (ImGui::Button("Spawn Object")) {
         spawnCall = true;
     }

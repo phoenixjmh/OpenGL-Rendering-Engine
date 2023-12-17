@@ -6,14 +6,12 @@
 #include "glm/glm.hpp"
 #include <string>
 #include <vector>
-using std::string;
-using std::vector;
 using namespace Logger;
 
 struct Texture {
     unsigned int id;
-    string type;
-    string path;
+    std::string type;
+    std::string path;
 };
 
 class Mesh {
@@ -23,7 +21,6 @@ public:
     std::vector<unsigned int> Indices;
     std::vector<Texture> Textures;
     void Draw(Shader& shader);
-    unsigned int VAO;
 
 private:
     VertexArray* m_vertexArray;

@@ -22,6 +22,7 @@ public:
     float ui_size;
     bool debug_is_simulate;
     bool camera_input;
+    bool renderer_lighting;
     ImGuiIO* io;
     bool spawnCall;
 private:
