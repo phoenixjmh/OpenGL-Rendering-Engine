@@ -81,19 +81,7 @@ void Renderer::init_mvp()
                              , camera.camera_up);
 }
 
-//Model Renderer::getModelFromID(unsigned int& ID)
-//{
-//    switch (ID) {
-//    case 0: return *m_sphere;
-//        break;
-//    case 1: return *m_backpack;
-//        break;
-//    case 2: return *m_cube;
-//        break;
-//    case 3: return *m_floor;
-//    default: break;
-//    }
-//}
+
 
 void Renderer::ModelMove(float scale, glm::vec3 position)
 {

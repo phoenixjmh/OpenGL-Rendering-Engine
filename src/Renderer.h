@@ -27,9 +27,9 @@ private:
 
     glm::mat4 light_projection;
 
-    float lightConstant = 1;
-    float lightLinear = 0.09f;
-    float lightQuadratic = 0.032f;
+    float light_constant = 1;
+    float light_linear = 0.09f;
+    float light_quadratic = 0.032f;
 
 
 public:
@@ -77,9 +77,6 @@ public:
     void BeginDraw();
     void Present();
     void ModelMove(float scale, glm::vec3 position);
-    void DrawPlane(float size, glm::vec3 position);
-    void DrawLight(float size);
-    void create_depth_map();
     void DrawObject(float size, glm::vec3 position, unsigned model_id, Shader* active_shader);
     void Clean();
     bool NO_LIGHTING;
@@ -101,12 +98,12 @@ private:
     unsigned int m_width;
     int m_height;
     void Init();
-    int glad_init();
-    int create_window(const int width, const int height);
+    void createDepthMap();
+    int initGlad();
+    int createWindow(const int width, const int height);
     void createModels();
     void createShaders();
     void init_mvp();
-    Model getModelFromID(unsigned int& ID);
     std::vector<Model> m_Models;
 };
 
