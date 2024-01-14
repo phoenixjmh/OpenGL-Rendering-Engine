@@ -6,7 +6,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     const char* PROJECT_DIR = "../../";
     std::string vert_path =PROJECT_DIR + static_cast<std::string>(vertexPath);
     std::string frag_path = PROJECT_DIR+ static_cast<std::string>(fragmentPath);
-
+    Path=vert_path;
     std::string vertexCode;
     std::string fragmentCode;
     std::ifstream vShaderFile;

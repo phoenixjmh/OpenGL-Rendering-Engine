@@ -12,19 +12,24 @@ public:
                                  camera_input(false), spawnCall(false) { init_imgui(window); }
 
     void BuildEditorWindow();
-    void AddObjectTransformEditor(unsigned int  index);
     void Render();
     void Shutdown();
+    int ModelType=0;
     float ui_xpos;
     float ui_ypos;
     float ui_zpos;
-
     float ui_size;
+
+
+
     bool debug_is_simulate;
     bool camera_input;
     bool renderer_lighting;
     ImGuiIO* io;
     bool spawnCall;
 private:
+    void DisplayModelSwitcher();
+    void AddObjectTransformEditor(unsigned int  index);
+    static bool ModelTypeGetter(void* data, int idx, const char** out_text);
     void init_imgui(GLFWwindow* window);
 };

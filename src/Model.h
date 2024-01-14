@@ -18,12 +18,13 @@ public:
     glm::vec3 Position;
     float Size;
 
-    void Draw(Shader& shader);
+    void Draw(Shader& shader, unsigned depthMap);
    
 private:
-
-    VAFlags m_flags;
     Mesh processMesh(aiMesh* mesh, const aiScene* scene);
+
+    const char* name;
+    VAFlags m_flags;
     std::vector<Texture> textures_loaded;
     std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type,
         std::string type_name);
@@ -33,6 +34,7 @@ private:
     void loadModel(const char* path);
     void processNode(aiNode* node, const aiScene* scene);
     void buildShape(); //used for non model-based loading
+    void printDebugInfo();
 };
 
 // Helper
@@ -41,7 +43,8 @@ static unsigned int TextureFromFile(const char* path, const std::string& directo
 {
     std::string filename = std::string(path);
     filename = directory + '/' + filename;
-    std::cout << filename << "\n";
+    
+    Log("Initializing texture from:",filename);
 
     unsigned int textureID;
     glGenTextures(1, &textureID);

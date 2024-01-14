@@ -8,7 +8,10 @@
 
 
 
+/// <summary>
+/// Set flags for model creation
 
+/// </summary>
 struct VAFlags {
       bool hasTexture;
   PrimitiveShape shape;

@@ -2,11 +2,13 @@
 #include <math.h>
 #include "glm/vec2.hpp"
 #include "glm/vec3.hpp"
+#include "Model.h"
 class PhysicsObject
 {
 public:
     PhysicsObject(float rad) : radius{rad}, id{nxt_id++}, mass{float(pow(rad, 2))} {}
 public:
+    unsigned int Model_ID;
     float mass;
     glm::vec2 acceleration;
     float radius;

@@ -7,6 +7,8 @@
 //    glGenVertexArrays(1, &m_RendererID);
 //}
 
+
+
 VertexArray::VertexArray(VertexBuffer vertex_buffer):vb(vertex_buffer)
 {
     VAFlags flags;

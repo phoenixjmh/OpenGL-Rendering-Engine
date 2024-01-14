@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.4...3.20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-project(Phoesics)
+project(StagR)
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+set(ASSIMP_BUILD_OBJ_IMPORTER ON)
 add_subdirectory(external/glfw)
 add_subdirectory(external/assimp)
 
@@ -19,6 +20,8 @@ set(SOURCES
   ${PROJECT_SOURCE_DIR}/src/VertexBuffer.cpp
   ${PROJECT_SOURCE_DIR}/src/Mesh.cpp
   ${PROJECT_SOURCE_DIR}/src/Logger.cpp
+  ${PROJECT_SOURCE_DIR}/src/Application.cpp
+
 
 
   )
@@ -37,6 +40,7 @@ set(HEADERS
   ${PROJECT_SOURCE_DIR}/src/VertexBuffer.h
   ${PROJECT_SOURCE_DIR}/src/Mesh.h
   ${PROJECT_SOURCE_DIR}/src/Logger.h
+  ${PROJECT_SOURCE_DIR}/src/Application.h
 
   )
 # file( GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)

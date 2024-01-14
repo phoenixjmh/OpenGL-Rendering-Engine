@@ -20,7 +20,8 @@ public:
     std::vector<Vertex> Vertices;
     std::vector<unsigned int> Indices;
     std::vector<Texture> Textures;
-    void Draw(Shader& shader);
+    void Draw(Shader& shader, unsigned depthMap);
+    void printTextureInfo();
 
 private:
     VertexArray* m_vertexArray;
