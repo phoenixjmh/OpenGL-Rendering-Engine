@@ -30,5 +30,5 @@ private:
 
   VAFlags m_flags;
   unsigned int m_RendererID;
-  VertexBuffer vb;
+  VertexBuffer vertexBuffer;
 };

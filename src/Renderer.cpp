@@ -14,8 +14,8 @@ ShapeFactory shapeFactory;
 
 void Renderer::Init()
 {
-    create_window(1024, 1024);
-    glad_init();
+    createWindow(1024, 1024);
+    initGlad();
     glfwSwapInterval(1);
 
     InitScene();
@@ -28,7 +28,7 @@ void Renderer::InitScene()
     const unsigned int DM_WIDTH = 1024, DM_HEIGHT = 1024;
     createShaders();
     createModels();
-    create_depth_map();
+    createDepthMap();
 }
 
 void Renderer::BeginDraw()
@@ -40,11 +40,20 @@ void Renderer::BeginDraw()
 
 void Renderer::createShaders()
 {
-    m_shader = new Shader("shaders/shader.vert", "shaders/shader.frag");
-    m_depth = new Shader("shaders/depth.vert", "shaders/depth.frag");
-    NOLIGHTING = new Shader("shaders/shader.vert", "shaders/NOLIGHTING.frag");
-    // m_light_shader = new Shader("shaders/lighting.vert",
-    // "shaders/lighting.frag");
+
+    Shader m_shader("shaders/shader.vert", "shaders/shader.frag");
+    Shader m_depth("shaders/depth.vert", "shaders/depth.frag");
+    Shader NOLIGHTING("shaders/shader.vert", "shaders/NOLIGHTING.frag");
+
+    m_Shaders = {
+        m_shader,
+        m_depth,
+        NOLIGHTING
+    };
+
+    PHONG_SHADERINDEX=0;
+    DEPTH_SHADERINDEX=1;
+    NOLIGHTING_SHADERINDEX=2;
 }
 
 void Renderer::createModels()
@@ -89,7 +98,7 @@ void Renderer::ModelMove(float scale, glm::vec3 position)
     ModelMatrix = glm::scale(ModelMatrix, {scale * 2, scale * 2, scale * 2});
 }
 
-void Renderer::create_depth_map()
+void Renderer::createDepthMap()
 {
     const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
     glGenFramebuffers(1, &depthMapFBO);
@@ -112,11 +121,15 @@ void Renderer::create_depth_map()
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id, Shader* active_shader)
+void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,bool depth_pass)
 {
     Model activeModel = m_Models[model_id];
-    Shader activeShader = *active_shader;
-    if (NO_LIGHTING) activeShader = *NOLIGHTING;
+
+    Shader activeShader = NO_LIGHTING? 
+        m_Shaders[NOLIGHTING_SHADERINDEX]:m_Shaders[PHONG_SHADERINDEX];
+    if(depth_pass)
+        activeShader=m_Shaders[DEPTH_SHADERINDEX];
+    
     activeShader.use();
     init_mvp();
     activeModel.Size = size;
@@ -163,15 +176,18 @@ void Renderer::DrawScene(float alpha)
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
         glm::vec3 render_position = {interpolatedPosition.x, interpolatedPosition.y, 1};
 
-        DrawObject(1, s.editor_pos,s.Model_ID, m_shader);
+        DrawObject(1, s.editor_pos,s.Model_ID);
     }
 }
 
 
 void Renderer::DepthPass(float alpha)
 {
-    m_depth->use();
-    m_depth->setMat4("LightSpaceMatrix", m_sceneData.GetLightSpaceMatrix());
+    // Optional parameter for the DrawObject function
+    bool depth_pass=true;
+    Shader depth_shader = m_Shaders[DEPTH_SHADERINDEX];
+    depth_shader.use();
+    depth_shader.setMat4("LightSpaceMatrix", m_sceneData.GetLightSpaceMatrix());
     glViewport(0, 0, m_width, m_height);
     glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
     glClear(GL_DEPTH_BUFFER_BIT);
@@ -181,22 +197,19 @@ void Renderer::DepthPass(float alpha)
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
         glm::vec3 render_position = { interpolatedPosition.x, interpolatedPosition.y, 1 };
 
-        DrawObject(1, s.editor_pos, s.Model_ID, m_depth);
+        DrawObject(1, s.editor_pos, s.Model_ID,depth_pass);
     }
 }
 
 void Renderer::Clean()
 {
-    m_shader->deleteProgram();
-    // m_light_shader->deleteProgram();
-    delete m_shader;
-    // delete m_light_shader;
+    m_Models.clear();
+    m_Shaders.clear();
 
     glfwTerminate();
-    delete window;
 }
 
-int Renderer::create_window(const int width, const int height)
+int Renderer::createWindow(const int width, const int height)
 {
     m_width = width;
     m_height = height;
@@ -221,7 +234,7 @@ int Renderer::create_window(const int width, const int height)
     return 0;
 }
 
-int Renderer::glad_init()
+int Renderer::initGlad()
 {
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cout << "Failed to initialize GLAD" << std::endl;

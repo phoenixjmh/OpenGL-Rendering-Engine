@@ -77,7 +77,7 @@ public:
     void BeginDraw();
     void Present();
     void ModelMove(float scale, glm::vec3 position);
-    void DrawObject(float size, glm::vec3 position, unsigned model_id, Shader* active_shader);
+    void DrawObject(float size, glm::vec3 position, unsigned model_id,bool depth_pass=false);
     void Clean();
     bool NO_LIGHTING;
 private:
@@ -87,10 +87,7 @@ private:
     glm::mat4 ViewMatrix;
     glm::mat4 ProjectionMatrix;
     glm::mat4 ModelViewProjection;
-    Shader* m_light_shader = nullptr;
-    Shader* m_shader = nullptr;
-    Shader* m_depth;
-    Shader* NOLIGHTING = nullptr;
+   
     unsigned int depthMapFBO;
     unsigned int depthMap;
 
@@ -105,6 +102,14 @@ private:
     void createShaders();
     void init_mvp();
     std::vector<Model> m_Models;
+    std::vector<Shader> m_Shaders;
+
+    // INDEX VALUES
+
+    unsigned int PHONG_SHADERINDEX;
+    unsigned int DEPTH_SHADERINDEX;
+    unsigned int NOLIGHTING_SHADERINDEX;
+
 };
 
 //Helpers
