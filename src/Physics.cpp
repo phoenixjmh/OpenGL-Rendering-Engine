@@ -1,8 +1,12 @@
 #include "Physics.h"
 
-void Physics::Update(double deltaTime)
+void Physics::OnWake()
 {
 
+}
+void Physics::Update(double deltaTime)
+{
+   
     const float bottom_border = 30;
     const float right_border = 20;
     const float left_border = -20;
@@ -13,6 +17,7 @@ void Physics::Update(double deltaTime)
                 const float distance = getDistance(s.pos.x, other_s.pos.x, s.pos.y, other_s.pos.y);
 
                 if (distance <= s.radius + other_s.radius) {
+
                     ResolveCollision(s, other_s, distance, deltaTime);
                 }
             }
@@ -28,7 +33,7 @@ void Physics::ResolveCollision(PhysicsObject& a, PhysicsObject& b, float magnitu
     glm::vec2 normal = { direction.x / magnitude, direction.y / magnitude };
     float relative_velocity = (a.vel.x - b.vel.x) * normal.x + (a.vel.y - b.vel.y) * normal.y;
     float totalMass = (a.mass + b.mass);
-    float force = 5;
+    float force = 50;
     float massRatioA = a.mass / totalMass;
     float massRatioB = b.mass / totalMass;
     float totalRadius = a.radius + b.radius;

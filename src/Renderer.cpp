@@ -95,7 +95,7 @@ void Renderer::init_mvp()
 void Renderer::ModelMove(float scale, glm::vec3 position)
 {
     ModelMatrix = glm::translate(ModelMatrix, position);
-    ModelMatrix = glm::scale(ModelMatrix, {scale * 2, scale * 2, scale * 2});
+    ModelMatrix = glm::scale(ModelMatrix, {scale , scale, scale });
 }
 
 void Renderer::createDepthMap()
@@ -164,6 +164,7 @@ void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,
 void Renderer::DrawScene(float alpha)
 {
     //Depth pass for shadows
+    float phys_to_rend_scaling_factor = 0.3;
     DepthPass(alpha);
 
    
@@ -174,9 +175,9 @@ void Renderer::DrawScene(float alpha)
     //calculate various object's world matrix
     for (auto& s : Physics::all_sand) {
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
-        glm::vec3 render_position = {interpolatedPosition.x, interpolatedPosition.y, 1};
-
-        DrawObject(1, s.editor_pos,s.Model_ID);
+        glm::vec3 render_position = {interpolatedPosition.x, -interpolatedPosition.y, s.editor_pos.z};
+  
+        DrawObject(s.radius, render_position, s.Model_ID);
     }
 }
 
@@ -197,7 +198,7 @@ void Renderer::DepthPass(float alpha)
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
         glm::vec3 render_position = { interpolatedPosition.x, interpolatedPosition.y, 1 };
 
-        DrawObject(1, s.editor_pos, s.Model_ID,depth_pass);
+        DrawObject(1, { s.pos.x,s.pos.y,s.editor_pos.z }, s.Model_ID, depth_pass);
     }
 }
 

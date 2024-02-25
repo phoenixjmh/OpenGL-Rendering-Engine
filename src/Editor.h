@@ -12,7 +12,7 @@ public:
                                  camera_input(false), spawnCall(false) { init_imgui(window); }
 
     void BuildEditorWindow();
-    void Render();
+   void Render();
     void Shutdown();
     int ModelType=0;
     float ui_xpos;

@@ -23,6 +23,8 @@ public:
     bool operator==(const PhysicsObject& other) const { return (id == other.id); }
 
     bool operator!=(const PhysicsObject& other) const { return !(id == other.id); }
+
+    bool simulated = false;
     
 private:
     int id;

@@ -9,6 +9,8 @@ float Mouse::lastX = 400;
 float Mouse::lastY = 400;
 bool Mouse::first = true;
 bool Mouse::enabled = false;
+bool Physics::first_update = true;
+bool Physics::IsSimulating = false;
 
 void Application::Init()
 {
@@ -53,12 +55,16 @@ void Application::Run()
         m_Editor->spawnCall = false;
     }
 
+    if(m_Editor->debug_is_simulate){
+    Physics::IsSimulating=true;
+  }
+  else {
+    Physics::IsSimulating=false;
+  }
     while (Accumulator > DeltaTime)
     {
         Physics::previousToCurrent();
-        if (m_Editor->debug_is_simulate)
             m_Field.Update(DeltaTime);
-
         Time += DeltaTime;
         Accumulator -= DeltaTime;
     }
@@ -70,7 +76,7 @@ void Application::Run()
     {
         m_Renderer->NO_LIGHTING = false;
     }
-
+    
     Alpha = Accumulator / DeltaTime;
     if (!m_Editor->io->WantCaptureMouse)
         processInput(m_Window, m_Renderer, *m_Editor, Alpha);
@@ -117,6 +123,12 @@ void Application::processInput(GLFWwindow* window, Renderer* m_Renderer, Editor&
             glm::cross(m_Renderer->camera.camera_front, m_Renderer->camera.camera_up))
         * cameraSpeed;
 
+    if(glfwGetMouseButton(window,GLFW_MOUSE_BUTTON_1)){
+
+    editor.camera_input=true;
+    Log("Click");
+    
+  }
     // LISTEN MOUSE
     if (editor.camera_input)
     {

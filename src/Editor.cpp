@@ -9,10 +9,12 @@ void Editor::AddObjectTransformEditor(unsigned int index)
     float* xpos = &Physics::all_sand[index].editor_pos.x;
     float* ypos = &Physics::all_sand[index].editor_pos.y;
     float* zpos = &Physics::all_sand[index].editor_pos.z;
+  float* size = &Physics::all_sand[index].radius;
 
     std::string str_x = "X: " + std::to_string(index);
     std::string str_y = "Y: " + std::to_string(index);
     std::string str_z = "Z: " + std::to_string(index);
+    std::string str_size = "Scale: "+std::to_string(index);
     // float& zpos = obj.pos.z;
     ImGui::SliderFloat(str_x.c_str(), xpos, -10, 10);
 
@@ -20,7 +22,7 @@ void Editor::AddObjectTransformEditor(unsigned int index)
 
     ImGui::SliderFloat(str_z.c_str(), zpos, -10, 10);
 
-    ImGui::SliderFloat("Size:", &ui_size, 1, 10);
+    ImGui::SliderFloat(str_size.c_str(), size, 1, 10);
    
 }
 void Editor::DisplayModelSwitcher()
@@ -35,12 +37,7 @@ void Editor::DisplayModelSwitcher()
         ModelType = ModelType;
     }
 }
-std::string modelIDToString(int id)
-{
-    std::string name;
-    switch (id)
-    {
-    case 0:
+std::string modelIDToString(int id) { std::string name; switch (id) { case 0:
         name="Sphere";
         return name;
     case 1:
@@ -69,7 +66,7 @@ void Editor::BuildEditorWindow()
     {
         ImGui::Begin("Scene Hierarchy");
 
-        //ImGui::Checkbox("Simulate", &debug_is_simulate);
+        ImGui::Checkbox("Simulate", &debug_is_simulate);
 
         ImGui::Checkbox("Camera Control", &camera_input);
 
