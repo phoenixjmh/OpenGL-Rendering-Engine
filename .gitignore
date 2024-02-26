@@ -27,7 +27,7 @@ _deps
 *.lo
 *.o
 *.obj
-!models/*.obj
+!**/models
 
 # Precompiled Headers
 *.gch
