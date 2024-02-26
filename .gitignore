@@ -26,8 +26,7 @@ _deps
 *.slo
 *.lo
 *.o
-*.obj
-!models/
+
 
 # Precompiled Headers
 *.gch
@@ -112,3 +111,5 @@ test/test_runner
 [Bb][Uu][Ii][Ll][Dd]/
 *.idx
 *.idx
+*.obj
+!models/
