@@ -27,7 +27,7 @@ _deps
 *.lo
 *.o
 *.obj
-!**/models
+!models/
 
 # Precompiled Headers
 *.gch
@@ -63,6 +63,7 @@ _deps
 **/*.cbp
 **/CMakeScripts
 **/compile_commands.json
+**
 
 include/divisible/*
 
