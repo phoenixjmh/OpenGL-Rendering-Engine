@@ -7,6 +7,18 @@
 #include <vector>
 
 using namespace std;
+
+/// temporary helper function
+
+string vec3_to_string(glm::vec3 v)
+{
+    string x, y, z;
+    x = to_string(v.x);
+    y = to_string(v.y);
+    z = to_string(v.z);
+    return x + y + z;
+}
+
 class Resource {
 public:
     Resource() { }
@@ -38,15 +50,9 @@ public:
     {
         return ParseResourceFromFile(name);
     }
-    void SaveResource(Resource r);
-    void SaveScene()
-    {
-        auto objects = Physics::all_sand;
-        for (auto object : objects) {
-            string modelPath = modelIDToString(object.Model_ID);
-            Resource r("Sphere", "", object.pos, modelPath);
-        }
-    }
+    static void SaveScene(string scene_name);
+    void SaveResource(Resource r, string scene_name);
+    void SaveBatchResource(vector<Resource> upload_buffer, string scene_name);
 
     static std::string modelIDToString(int id)
     {

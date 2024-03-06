@@ -1,5 +1,23 @@
 #include "ResourceManager.h"
+using namespace std;
 
+static void Resource::SaveScene(string scene_name)
+{
+    vector<Resource> resource_upload_buffer;
+    auto objects = Physics::all_sand;
+    for (auto object : objects) {
+        string modelPath = ResourceManager::modelIDToString(object.Model_ID);
+        Resource r("Sphere", "", vec3_to_string({ object.pos, 0 }), modelPath);
+        resource_upload_buffer.push_back(r);
+    }
+    SaveBatchResources(resource_upload_buffer, scene_name);
+}
+void Resource::SaveBatchResources(vector<Resource> upload_buffer, string scene_name)
+{
+    for (auto r : upload_buffer) {
+        SaveResource(r, string scene_name);
+    }
+}
 Resource ResourceManager::ParseResourceFromFile(string name)
 {
     vector<string> words;
@@ -48,17 +66,13 @@ Resource ResourceManager::ParseResourceFromFile(string name)
     return { "", "", "", "" };
 }
 
-void ResourceManager::SaveResource(Resource r)
+void ResourceManager::SaveResource(Resource r, string scene_name)
 {
-    string fullpath = RES_DIR + r.Name + FILE_EXT;
+    string fullpath = RES_DIR + scene_name + FILE_EXT;
     ifstream checkfile(fullpath);
 
-    if (checkfile.good()) {
-        cout << "ERROR::RESMAN::CANNOT OVERWRITE EXISTING FILE\n";
-        return;
-    }
-    ofstream filetowrite(fullpath);
-    filetowrite << "{"
+    ofstream filetowrite(fullpath, ios::app);
+    filetowrite << "\n {"
                 << "\n Name : "
                 << r.Name << " ,"
                 << "\n Color : "
@@ -66,6 +80,6 @@ void ResourceManager::SaveResource(Resource r)
                 << "\n Position : "
                 << r.Position << " , "
                 << "\n ModelPath : "
-                << r.ModelPath << " \n } ";
+                << r.ModelPath << " \n }\n ";
     filetowrite.close();
 }

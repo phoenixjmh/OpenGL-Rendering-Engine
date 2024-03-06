@@ -73,7 +73,7 @@ void Editor::PopulateImGui()
             Physics::ClearAll();
         }
         if (ImGui::Button("Save Scene")) {
-            ResourceManager::SaveScene()
+            ResourceManager::SaveScene("test");
         }
 
         ImGui::SameLine();
