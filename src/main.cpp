@@ -14,6 +14,7 @@ int main()
         // frame logic
            }
     app.Close();
+
       return 0;
 }
 

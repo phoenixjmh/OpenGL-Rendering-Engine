@@ -17,6 +17,7 @@ public:
     glm::vec2 pos;
     glm::vec2 vel;
     glm::vec2 prev_vel;
+    glm::vec3 debug_color;
     void update(float deltaTime);
     void Spawn(glm::vec2 start);
 

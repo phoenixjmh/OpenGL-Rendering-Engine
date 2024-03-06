@@ -22,10 +22,11 @@ void PhysicsObject::update(float deltaTime) {
   prev_pos = pos;
   acceleration.y = gravity;
   vel += acceleration * deltaTime;
-  pos += vel * deltaTime;
+  pos += vel* deltaTime;
 }
 
 void PhysicsObject::Spawn(glm::vec2 start) {
-  pos = prev_pos = start;
-  editor_pos = {0, 0, 0};
+  editor_pos = {0, -2, 0};
+  pos = prev_pos = editor_pos;
+  Log("Spawn");
 }

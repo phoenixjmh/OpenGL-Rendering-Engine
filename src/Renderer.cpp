@@ -1,6 +1,4 @@
 #include "Renderer.h"
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
 
 #include "Model.h"
 
@@ -44,16 +42,19 @@ void Renderer::createShaders()
     Shader m_shader("shaders/shader.vert", "shaders/shader.frag");
     Shader m_depth("shaders/depth.vert", "shaders/depth.frag");
     Shader NOLIGHTING("shaders/shader.vert", "shaders/NOLIGHTING.frag");
+    Shader FLAT_COLOR("shaders/shader.vert", "shaders/FLATCOLOR.frag");
 
     m_Shaders = {
         m_shader,
         m_depth,
-        NOLIGHTING
+        NOLIGHTING,
+        FLAT_COLOR
     };
 
     PHONG_SHADERINDEX=0;
     DEPTH_SHADERINDEX=1;
     NOLIGHTING_SHADERINDEX=2;
+    FLATCOLOR_SHADERINDEX=3;
 }
 
 void Renderer::createModels()
@@ -121,21 +122,31 @@ void Renderer::createDepthMap()
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,bool depth_pass)
+void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,int index,bool depth_pass)
 {
     Model activeModel = m_Models[model_id];
+Shader activeShader =m_Shaders[PHONG_SHADERINDEX];
+    if(NO_LIGHTING){
+        activeShader=m_Shaders[NOLIGHTING_SHADERINDEX];
+    }
+     if(FLAT_COLOR_SHADING){
+        activeShader=m_Shaders[FLATCOLOR_SHADERINDEX];
+    }
 
-    Shader activeShader = NO_LIGHTING? 
-        m_Shaders[NOLIGHTING_SHADERINDEX]:m_Shaders[PHONG_SHADERINDEX];
     if(depth_pass)
         activeShader=m_Shaders[DEPTH_SHADERINDEX];
-    
+
     activeShader.use();
     init_mvp();
     activeModel.Size = size;
     activeModel.Position = position;
     ModelMove(activeModel.Size, activeModel.Position);
     ModelViewProjection = ProjectionMatrix * ViewMatrix * ModelMatrix;
+
+    if(FLAT_COLOR_SHADING){
+        glm::vec3 flat_color={glm::clamp((float)(index*index)/5,(float)0.1,(float)1.0),glm::clamp((float)(index*index)/3,(float)0.1,(float)1.0),glm::clamp((float)(index*index)/8,(float)0.1,(float)1.0)};
+    activeShader.setVec3("flat_color",flat_color);
+    }
 
     activeShader.setVec3("viewPos", camera.camera_position);
     activeShader.setVec3("objectColor", {1, .3, .3});
@@ -164,20 +175,24 @@ void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,
 void Renderer::DrawScene(float alpha)
 {
     //Depth pass for shadows
-    float phys_to_rend_scaling_factor = 0.3;
+    float phys_to_rend_scaling_factor = 0.70; //THE MAGIC NUMBER?!
     DepthPass(alpha);
 
-   
+
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glViewport(0, 0,m_width, m_height);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glCullFace(GL_BACK);
     //calculate various object's world matrix
-    for (auto& s : Physics::all_sand) {
+    for(int i=0;i<Physics::all_sand.size();i++){
+        auto s=Physics::all_sand[i];
+
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
         glm::vec3 render_position = {interpolatedPosition.x, -interpolatedPosition.y, s.editor_pos.z};
-  
-        DrawObject(s.radius, render_position, s.Model_ID);
+
+        DrawObject(s.radius* phys_to_rend_scaling_factor, render_position, s.Model_ID,i);
+    }
+    for (auto& s : Physics::all_sand) {
     }
 }
 
@@ -198,7 +213,7 @@ void Renderer::DepthPass(float alpha)
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
         glm::vec3 render_position = { interpolatedPosition.x, interpolatedPosition.y, 1 };
 
-        DrawObject(1, { s.pos.x,s.pos.y,s.editor_pos.z }, s.Model_ID, depth_pass);
+        DrawObject(1, { s.pos.x,s.pos.y,s.editor_pos.z }, s.Model_ID,0, depth_pass);
     }
 }
 

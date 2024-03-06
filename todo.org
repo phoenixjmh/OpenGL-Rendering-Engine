@@ -1,0 +1,15 @@
+# PHOESICS TODOS
+
+
+
+** TODO Make store some reference to a color based on index.
+Some way that the object retains a reference to it's own color
+
+** TODO Fix whatever broke with the simulation location...Depth pass?
+Still not entirely sure what is going on here.
+
+** TODO Try to understand local scaling factor between physics objects and their rendered models...
+
+** TODO Fix camera funkyness when first clicking. You've done this before.
+
+** TODO Go into the imgui git folder, and switch branch to docking, configure accordingly.

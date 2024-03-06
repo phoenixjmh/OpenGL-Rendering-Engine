@@ -21,6 +21,7 @@ set(SOURCES
   ${PROJECT_SOURCE_DIR}/src/Mesh.cpp
   ${PROJECT_SOURCE_DIR}/src/Logger.cpp
   ${PROJECT_SOURCE_DIR}/src/Application.cpp
+  ${PROJECT_SOURCE_DIR}/src/ResourceManager.cpp
 
 
 
@@ -41,6 +42,8 @@ set(HEADERS
   ${PROJECT_SOURCE_DIR}/src/Mesh.h
   ${PROJECT_SOURCE_DIR}/src/Logger.h
   ${PROJECT_SOURCE_DIR}/src/Application.h
+  ${PROJECT_SOURCE_DIR}/src/ResourceManager.h
+
 
   )
 # file( GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)

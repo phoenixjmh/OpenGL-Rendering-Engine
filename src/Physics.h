@@ -12,6 +12,9 @@ public:
     static void ResolveBorderCollision(PhysicsObject& s, float ground_level, float left_border, float right_border, float deltaTime);
     static void previousToCurrent();
     static float getDistance(float ax, float bx, float ay, float by);
+        static float resolution_force;
+
+    static void ClearAll();
 private:
     static bool first_update;
 };
