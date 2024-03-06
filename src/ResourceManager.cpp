@@ -1,7 +1,6 @@
 #include "ResourceManager.h"
-using namespace std;
 
-static void Resource::SaveScene(string scene_name)
+void ResourceManager::SaveScene(string scene_name)
 {
     vector<Resource> resource_upload_buffer;
     auto objects = Physics::all_sand;
@@ -10,12 +9,12 @@ static void Resource::SaveScene(string scene_name)
         Resource r("Sphere", "", vec3_to_string({ object.pos, 0 }), modelPath);
         resource_upload_buffer.push_back(r);
     }
-    SaveBatchResources(resource_upload_buffer, scene_name);
+    ResourceManager::SaveBatchResources(resource_upload_buffer, scene_name);
 }
-void Resource::SaveBatchResources(vector<Resource> upload_buffer, string scene_name)
+void ResourceManager::SaveBatchResources(vector<Resource> upload_buffer, string scene_name)
 {
     for (auto r : upload_buffer) {
-        SaveResource(r, string scene_name);
+        ResourceManager::SaveResource(r, scene_name);
     }
 }
 Resource ResourceManager::ParseResourceFromFile(string name)

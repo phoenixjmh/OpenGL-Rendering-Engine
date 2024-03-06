@@ -42,17 +42,16 @@ public:
 
 class ResourceManager {
 public:
-    const string FILE_EXT = ".stag";
-    string RES_DIR;
     void SetResourceRootDirectory(string path) { RES_DIR = path; }
+    void SetFileExtension(string ext) { FILE_EXT = ext; }
 
     Resource LoadResource(string name)
     {
         return ParseResourceFromFile(name);
     }
     static void SaveScene(string scene_name);
-    void SaveResource(Resource r, string scene_name);
-    void SaveBatchResource(vector<Resource> upload_buffer, string scene_name);
+    static void SaveResource(Resource r, string scene_name);
+    static void SaveBatchResources(vector<Resource> upload_buffer, string scene_name);
 
     static std::string modelIDToString(int id)
     {
@@ -74,6 +73,8 @@ public:
     }
 
 private:
+    static string FILE_EXT;
+    static string RES_DIR;
     vector<Resource> m_Resources;
     Resource ParseResourceFromFile(string name);
 };
