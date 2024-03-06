@@ -1,12 +1,17 @@
 #pragma once
-#include <math.h>
+#include "Model.h"
 #include "glm/vec2.hpp"
 #include "glm/vec3.hpp"
-#include "Model.h"
-class PhysicsObject
-{
+#include <math.h>
+class PhysicsObject {
 public:
-    PhysicsObject(float rad) : radius{rad}, id{nxt_id++}, mass{float(pow(rad, 2))} {}
+    PhysicsObject(float rad)
+        : radius { rad }
+        , id { nxt_id++ }
+        , mass { float(pow(rad, 2)) }
+    {
+    }
+
 public:
     unsigned int Model_ID;
     float mass;
@@ -19,14 +24,14 @@ public:
     glm::vec2 prev_vel;
     glm::vec3 debug_color;
     void update(float deltaTime);
-    void Spawn(glm::vec2 start);
+    void Spawn(glm::vec2 start = { 0, -2 });
 
     bool operator==(const PhysicsObject& other) const { return (id == other.id); }
 
     bool operator!=(const PhysicsObject& other) const { return !(id == other.id); }
 
     bool simulated = false;
-    
+
 private:
     int id;
     static int nxt_id;

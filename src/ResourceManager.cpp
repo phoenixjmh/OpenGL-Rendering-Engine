@@ -206,6 +206,9 @@ void ResourceManager::LoadScene(string name)
         }
     }
     cout << "RESMAN FOUND " << m_Resources.size() << " OBJECTS TO LOAD\n";
+    // clear the current scene
+
+    Physics::all_sand.clear();
 
     // deserialize items
     int counter = 0;
@@ -220,4 +223,6 @@ void ResourceManager::LoadScene(string name)
 
         Physics::all_sand.back().Spawn({ pos.x, pos.y });
     }
+
+    return;
 }

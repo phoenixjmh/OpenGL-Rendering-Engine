@@ -49,16 +49,16 @@ public:
         std::string name;
         switch (id) {
         case 0:
-            name = "Sphere";
+            name = "sphere";
             return name;
         case 1:
-            name = "Backpack";
+            name = "backpack";
             return name;
         case 2:
-            name = "Cube";
+            name = "cube";
             return name;
         case 3:
-            name = "Floor";
+            name = "floor";
             return name;
         }
     }
