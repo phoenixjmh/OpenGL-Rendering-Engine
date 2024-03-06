@@ -9,6 +9,9 @@ bool Mouse::enabled = false;
 bool Physics::first_update = true;
 bool Physics::IsSimulating = false;
 float Physics::resolution_force = 60;
+string ResourceManager::FILE_EXT = "";
+string ResourceManager::RES_DIR = "";
+std::vector<Resource> ResourceManager::m_Resources;
 
 void Application::Init()
 {

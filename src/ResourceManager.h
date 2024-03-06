@@ -10,15 +10,6 @@ using namespace std;
 
 /// temporary helper function
 
-string vec3_to_string(glm::vec3 v)
-{
-    string x, y, z;
-    x = to_string(v.x);
-    y = to_string(v.y);
-    z = to_string(v.z);
-    return x + y + z;
-}
-
 class Resource {
 public:
     Resource() { }
@@ -71,10 +62,11 @@ public:
             return name;
         }
     }
+    static void LoadScene(string name);
 
 private:
     static string FILE_EXT;
     static string RES_DIR;
-    vector<Resource> m_Resources;
+    static vector<Resource> m_Resources;
     Resource ParseResourceFromFile(string name);
 };

@@ -75,6 +75,9 @@ void Editor::PopulateImGui()
         if (ImGui::Button("Save Scene")) {
             ResourceManager::SaveScene("test");
         }
+        if (ImGui::Button("Load Scene")) {
+            ResourceManager::LoadScene("test");
+        }
 
         ImGui::SameLine();
         DisplayModelSwitcher();
