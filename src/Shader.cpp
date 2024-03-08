@@ -3,10 +3,10 @@
 
 Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
-    const char* PROJECT_DIR = "../../";
-    std::string vert_path =PROJECT_DIR + static_cast<std::string>(vertexPath);
-    std::string frag_path = PROJECT_DIR+ static_cast<std::string>(fragmentPath);
-    Path=vert_path;
+    // const char* PROJECT_DIR = "../../";
+    // std::string vert_path =PROJECT_DIR + static_cast<std::string>(vertexPath);
+    // std::string frag_path = PROJECT_DIR+ static_cast<std::string>(fragmentPath);
+    // Path=vert_path;
     std::string vertexCode;
     std::string fragmentCode;
     std::ifstream vShaderFile;
@@ -14,8 +14,8 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     try {
-        vShaderFile.open(vert_path);
-        fShaderFile.open(frag_path);
+        vShaderFile.open(vertexPath);
+        fShaderFile.open(fragmentPath);
         std::stringstream vShaderStream, fShaderStream;
         vShaderStream << vShaderFile.rdbuf();
         fShaderStream << fShaderFile.rdbuf();

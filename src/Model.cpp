@@ -41,7 +41,7 @@ void Model::Draw(Shader& shader, unsigned int depthMap)
 
 void Model::loadModel(const char* path)
 {
-    std::string filepath = "../../" + static_cast<std::string>(path);
+    std::string filepath =  static_cast<std::string>(path);
     Assimp::Importer import;
     const aiScene * scene = import.ReadFile(filepath, aiProcess_Triangulate | aiProcess_FlipUVs);
 

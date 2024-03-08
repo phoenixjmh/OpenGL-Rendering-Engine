@@ -24,7 +24,7 @@ void Application::Init()
     m_Window = m_Renderer->GetWindow();
     m_Editor = new Editor(m_Window);
     m_ResMan = new ResourceManager();
-    m_ResMan->SetResourceRootDirectory("../../res/");
+    m_ResMan->SetResourceRootDirectory("/res/");
 }
 
 void Application::Run()
