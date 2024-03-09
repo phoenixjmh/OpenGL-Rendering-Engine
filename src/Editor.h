@@ -41,5 +41,6 @@ class Editor
     void AddObjectTransformEditor(unsigned int index);
     static bool ModelTypeGetter(void *data, int idx, const char **out_text);
     void init_imgui(GLFWwindow *window);
+    void ConfigureStyle();
     friend class ResourceManager;
 };
