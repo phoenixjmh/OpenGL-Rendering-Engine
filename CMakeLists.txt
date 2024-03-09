@@ -6,6 +6,8 @@ set(ASSIMP_BUILD_OBJ_IMPORTER ON)
 add_subdirectory(external/glfw)
 add_subdirectory(external/assimp)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
+
 set(SOURCES 
   ${PROJECT_SOURCE_DIR}/src/Editor.cpp
   ${PROJECT_SOURCE_DIR}/src/IndexBuffer.cpp
