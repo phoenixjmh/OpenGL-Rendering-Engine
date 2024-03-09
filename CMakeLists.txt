@@ -26,6 +26,16 @@ set(SOURCES
   ${PROJECT_SOURCE_DIR}/src/ResourceManager.cpp
 
 
+ ${PROJECT_SOURCE_DIR}/external/imgui/imgui.cpp
+ ${PROJECT_SOURCE_DIR}/external/imgui/imgui_demo.cpp
+ ${PROJECT_SOURCE_DIR}/external/imgui/imgui_draw.cpp
+ ${PROJECT_SOURCE_DIR}/external/imgui/imgui_tables.cpp
+ ${PROJECT_SOURCE_DIR}/external/imgui/imgui_widgets.cpp
+
+ ${PROJECT_SOURCE_DIR}/external/imgui/backends/imgui_impl_glfw.cpp
+ ${PROJECT_SOURCE_DIR}/external/imgui/backends/imgui_impl_opengl3.cpp
+
+
 
   )
 
@@ -47,9 +57,9 @@ set(HEADERS
   ${PROJECT_SOURCE_DIR}/src/ResourceManager.h
 
 
+
   )
-# file( GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-# file( GLOB_RECURSE HEADERS ${PROJECT_SOURCE_DIR}/src/*.h)
+
 file( GLOB_RECURSE SHADERS ${PROJECT_SOURCE_DIR}/shaders/*.vert ${PROJECT_SOURCE_DIR}/shaders/*.frag)
 file(GLOB_RECURSE VENDOR
   ${PROJECT_SOURCE_DIR}/src/vendor/*.c 
@@ -72,6 +82,10 @@ target_include_directories(${PROJECT_NAME}
   PUBLIC
   external/
   PUBLIC
+  external/imgui
+  PUBLIC
+  external/imgui/backends
+  PUBLIC
   src/
   PUBLIC
   src/vendor/
@@ -80,6 +94,8 @@ target_include_directories(${PROJECT_NAME}
 target_link_directories(${PROJECT_NAME}
   PUBLIC external/glfw/include
   PUBLIC external/glm
+  # PUBLIC external/imgui
+  PUBLIC external/imgui/backends
   PUBLIC external/assimp/include
   PUBLIC src/
   PUBLIC src/vendor/
