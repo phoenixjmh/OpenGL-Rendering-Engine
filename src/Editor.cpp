@@ -1,16 +1,17 @@
 ﻿#include "Editor.h"
 
 #include "ResourceManager.h"
+#include "imgui.h"
 #include <iostream>
 #include <string>
 
 void Editor::AddObjectTransformEditor(unsigned int index)
 {
 
-    float* xpos = &Physics::all_sand[index].editor_pos.x;
-    float* ypos = &Physics::all_sand[index].editor_pos.y;
-    float* zpos = &Physics::all_sand[index].editor_pos.z;
-    float* size = &Physics::all_sand[index].radius;
+    float *xpos = &Physics::all_sand[index].editor_pos.x;
+    float *ypos = &Physics::all_sand[index].editor_pos.y;
+    float *zpos = &Physics::all_sand[index].editor_pos.z;
+    float *size = &Physics::all_sand[index].radius;
 
     std::string str_x = "X: " + std::to_string(index);
     std::string str_y = "Y: " + std::to_string(index);
@@ -33,11 +34,11 @@ void Editor::BuildPhysicsPropertiesWindow()
 }
 void Editor::DisplayModelSwitcher()
 {
-    const char* const options[] = { "sphere", "backpack", "cube", "floor" };
-    int size = sizeof(options) / sizeof(const char*);
+    const char *const options[] = {"sphere", "backpack", "cube", "floor"};
+    int size = sizeof(options) / sizeof(const char *);
     // Call ListBox and update the member variable
-    if (ImGui::ListBox("Model:", &ModelType, ModelTypeGetter,
-            (void*)options, size, 4)) {
+    if (ImGui::ListBox("Model:", &ModelType, ModelTypeGetter, (void *)options, size, 4))
+    {
         // ListBox value changed, update the member variable
         ModelType = ModelType;
     }
@@ -59,6 +60,8 @@ void Editor::PopulateImGui()
     static float f = 0.0f;
     static int counter = 0;
 
+    ImGui::DockSpaceOverViewport(ImGui::GetMainViewport(), ImGuiDockNodeFlags_PassthruCentralNode);
+
     {
         ImGui::Begin("Scene Hierarchy");
 
@@ -66,23 +69,28 @@ void Editor::PopulateImGui()
 
         ImGui::Checkbox("Camera Control", &camera_input);
 
-        if (ImGui::Button("Spawn Object")) {
+        if (ImGui::Button("Spawn Object"))
+        {
             spawnCall = true;
         }
-        if (ImGui::Button("Clear Objects")) {
+        if (ImGui::Button("Clear Objects"))
+        {
             Physics::ClearAll();
         }
-        if (ImGui::Button("Save Scene")) {
+        if (ImGui::Button("Save Scene"))
+        {
             ResourceManager::SaveScene("test");
         }
-        if (ImGui::Button("Load Scene")) {
+        if (ImGui::Button("Load Scene"))
+        {
             ResourceManager::LoadScene("test");
         }
 
         ImGui::SameLine();
         DisplayModelSwitcher();
 
-        for (int i = 0; i < Physics::all_sand.size(); i++) {
+        for (int i = 0; i < Physics::all_sand.size(); i++)
+        {
             unsigned int ModelID = Physics::all_sand[i].Model_ID;
 
             std::string name = ResourceManager::modelIDToString(ModelID);
@@ -112,14 +120,15 @@ void Editor::Render()
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-void Editor::init_imgui(GLFWwindow* window)
+void Editor::init_imgui(GLFWwindow *window)
 {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    io = &ImGui::GetIO();
     ImGui::StyleColorsDark();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init();
+    io = &ImGui::GetIO();
+    io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 }
 
 void Editor::Shutdown()
@@ -129,11 +138,12 @@ void Editor::Shutdown()
     ImGui::DestroyContext();
 }
 
-bool Editor::ModelTypeGetter(void* data, int idx, const char** out_text)
+bool Editor::ModelTypeGetter(void *data, int idx, const char **out_text)
 {
     // Assuming data is an array of string labels
-    const char* const* items = static_cast<const char* const*>(data);
-    if (out_text) {
+    const char *const *items = static_cast<const char *const *>(data);
+    if (out_text)
+    {
         *out_text = items[idx];
         return true;
     }

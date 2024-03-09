@@ -2,22 +2,20 @@
 #include "Mouse.h"
 #include "Physics.h"
 #include "ResourceManager.h"
-#include "vendor/imgui/imgui.h"
-#include "vendor/imgui/imgui_impl_glfw.h"
-#include "vendor/imgui/imgui_impl_opengl3.h"
+#include "imgui/backends/imgui_impl_glfw.h"
+#include "imgui/imgui.h"
+// include "imgui/imgui_impl_glfw.h"
+#include "imgui/backends/imgui_impl_opengl3.h"
 
-class Editor {
-public:
-    Editor(GLFWwindow* window)
-        : ui_xpos(0)
-        , ui_ypos(0)
-        , ui_size(1)
-        , debug_is_simulate(false)
-        , flat_color_shading(false)
-        , camera_input(false)
-        , spawnCall(false)
+class Editor
+{
+  public:
+    Editor(GLFWwindow *window)
+        : ui_xpos(0), ui_ypos(0), ui_size(1), debug_is_simulate(false), flat_color_shading(false), camera_input(false),
+          spawnCall(false)
     {
         init_imgui(window);
+        Log("New GUI");
     }
 
     void PopulateImGui();
@@ -33,15 +31,15 @@ public:
     bool debug_is_simulate;
     bool camera_input;
     bool renderer_lighting;
-    ImGuiIO* io;
+    ImGuiIO *io;
     bool spawnCall;
 
-private:
+  private:
     void BuildPhysicsPropertiesWindow();
     void BuildRendererPropertiesWindow();
     void DisplayModelSwitcher();
     void AddObjectTransformEditor(unsigned int index);
-    static bool ModelTypeGetter(void* data, int idx, const char** out_text);
-    void init_imgui(GLFWwindow* window);
+    static bool ModelTypeGetter(void *data, int idx, const char **out_text);
+    void init_imgui(GLFWwindow *window);
     friend class ResourceManager;
 };

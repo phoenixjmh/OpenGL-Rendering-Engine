@@ -4,20 +4,17 @@
 #include "Physics.h"
 #include "Renderer.h"
 #include "ResourceManager.h"
-#include "vendor/imgui/imgui.h"
-#include "vendor/imgui/imgui_impl_glfw.h"
-#include "vendor/imgui/imgui_impl_opengl3.h"
+// #include "vendor/imgui/imgui.h"
+// #include "vendor/imgui/imgui_impl_glfw.h"
+// #include "vendor/imgui/imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 
-class Application {
+class Application
+{
 
-public:
-    Application()
-        : m_Editor(nullptr)
-        , m_Renderer(nullptr)
-        , m_Window(nullptr)
-        , m_ResMan(nullptr)
+  public:
+    Application() : m_Editor(nullptr), m_Renderer(nullptr), m_Window(nullptr), m_ResMan(nullptr)
 
     {
         Init();
@@ -26,16 +23,19 @@ public:
     void Run();
     void Close();
 
-    GLFWwindow* GetWindow() { return m_Window; }
+    GLFWwindow *GetWindow()
+    {
+        return m_Window;
+    }
 
-private:
+  private:
     Physics m_Field;
-    Renderer* m_Renderer;
-    GLFWwindow* m_Window;
-    Editor* m_Editor;
-    ResourceManager* m_ResMan;
+    Renderer *m_Renderer;
+    GLFWwindow *m_Window;
+    Editor *m_Editor;
+    ResourceManager *m_ResMan;
 
-    void processInput(GLFWwindow* window, Renderer* renderer, Editor& editor, float deltaTime);
+    void processInput(GLFWwindow *window, Renderer *renderer, Editor &editor, float deltaTime);
     double currentTime;
     double Time;
     double DeltaTime;
