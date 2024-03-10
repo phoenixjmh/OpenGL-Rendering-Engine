@@ -9,7 +9,8 @@ bool Mouse::first = true;
 bool Mouse::enabled = false;
 bool Physics::first_update = true;
 bool Physics::IsSimulating = false;
-float Physics::resolution_force = 60;
+float Physics::border_resolution_force = 0.5;
+float Physics::object_resolution_force = 0.5;
 string ResourceManager::FILE_EXT = "";
 string ResourceManager::RES_DIR = "";
 std::vector<Resource> ResourceManager::m_Resources;
@@ -56,7 +57,7 @@ void Application::Run()
 
         Physics::all_sand.push_back(Object);
 
-        Physics::all_sand.back().Spawn({m_Editor->ui_xpos, m_Editor->ui_ypos});
+        Physics::all_sand.back().Spawn({0, -3});
 
         m_Editor->spawnCall = false;
     }

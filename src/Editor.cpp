@@ -29,7 +29,8 @@ void Editor::AddObjectTransformEditor(unsigned int index)
 void Editor::BuildPhysicsPropertiesWindow()
 {
     ImGui::Begin("Physics Properties");
-    ImGui::SliderFloat("Collision Resolution Force", &Physics::resolution_force, 0, 200);
+    ImGui::SliderFloat("Object Collision Resolution Force", &Physics::object_resolution_force, 0, 200);
+    ImGui::SliderFloat("Border Collision Resolution Force", &Physics::border_resolution_force, 0, 200);
     ImGui::End();
 }
 void Editor::DisplayModelSwitcher()

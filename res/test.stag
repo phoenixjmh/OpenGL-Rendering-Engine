@@ -2,29 +2,21 @@
  {
  Name : Sphere ,
  Color :  , 
- Position : [8.241000,5.327000,0.000000] , 
+ Position : [1.429000,-8.357000,0.000000] , 
  ModelPath : sphere 
  }
  
  {
  Name : Sphere ,
  Color :  , 
- Position : [4.322000,-4.523000,0.000000] , 
- ModelPath : sphere 
- }
- 
-
- {
- Name : Sphere ,
- Color :  , 
- Position : [8.241000,-1.401667,0.000000] , 
+ Position : [0.000000,-3.714000,0.000000] , 
  ModelPath : sphere 
  }
  
  {
  Name : Sphere ,
  Color :  , 
- Position : [4.322000,-0.916667,0.000000] , 
+ Position : [2.976000,-3.000000,0.000000] , 
  ModelPath : sphere 
  }
  
