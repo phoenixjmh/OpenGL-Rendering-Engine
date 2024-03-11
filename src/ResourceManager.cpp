@@ -237,7 +237,10 @@ void ResourceManager::LoadScene(string name)
     cout << "RESMAN FOUND " << m_Resources.size() << " OBJECTS TO LOAD\n";
     // clear the current scene
 
-    Physics::all_sand.clear();
+    Physics::ClearAll();
+    auto objects_in_scene = Physics::all_sand;
+
+    objects_in_scene;
 
     // deserialize items
     int counter = 0;

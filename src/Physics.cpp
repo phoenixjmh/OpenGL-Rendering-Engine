@@ -108,5 +108,5 @@ float Physics::getDistance(float ax, float bx, float ay, float by)
 
 void Physics::ClearAll()
 {
-    Physics::all_sand.clear();
+    all_sand.clear();
 }

@@ -3,6 +3,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project(StagR)
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 set(ASSIMP_BUILD_OBJ_IMPORTER ON)
+set(CMAKE_BUILD_TYPE Debug)
 add_subdirectory(external/glfw)
 add_subdirectory(external/assimp)
 
