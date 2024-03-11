@@ -8,10 +8,10 @@
 void Editor::AddObjectTransformEditor(unsigned int index)
 {
 
-    float *xpos = &Physics::all_sand[index].editor_pos.x;
-    float *ypos = &Physics::all_sand[index].editor_pos.y;
-    float *zpos = &Physics::all_sand[index].editor_pos.z;
-    float *size = &Physics::all_sand[index].radius;
+    float *xpos = &Physics::ObjectsInScene[index].editor_pos.x;
+    float *ypos = &Physics::ObjectsInScene[index].editor_pos.y;
+    float *zpos = &Physics::ObjectsInScene[index].editor_pos.z;
+    float *size = &Physics::ObjectsInScene[index].radius;
 
     std::string str_x = "X: " + std::to_string(index);
     std::string str_y = "Y: " + std::to_string(index);
@@ -90,17 +90,20 @@ void Editor::PopulateImGui()
         ImGui::SameLine();
         DisplayModelSwitcher();
 
-        for (int i = 0; i < Physics::all_sand.size(); i++)
+        if(Physics::GetObjectVectorAccess())
         {
-            unsigned int ModelID = Physics::all_sand[i].Model_ID;
+            for (int i = 0; i < Physics::ObjectsInScene.size(); i++)
+            {
+                unsigned int ModelID = Physics::ObjectsInScene[i].Model_ID;
 
-            std::string name = ResourceManager::modelIDToString(ModelID);
+                std::string name = ResourceManager::modelIDToString(ModelID);
 
-            ImGui::SeparatorText(name.c_str());
+                ImGui::SeparatorText(name.c_str());
 
-            AddObjectTransformEditor(i);
+                AddObjectTransformEditor(i);
 
-            ImGui::Dummy(ImVec2(0.0f, 20.0f));
+                ImGui::Dummy(ImVec2(0.0f, 20.0f));
+            }
         }
         ImGui::End();
     }

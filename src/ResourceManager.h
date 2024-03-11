@@ -42,6 +42,9 @@ public:
     }
     static void SaveScene(string scene_name);
     static void SaveResource(Resource r, string scene_name);
+    static bool ReadSceneFileIn(string name, vector<string> &words);
+    static void ParseResourceData(vector<string> words);
+    static void SpawnResources();
     static void SaveBatchResources(vector<Resource> upload_buffer, string scene_name);
 
     static std::string modelIDToString(int id)

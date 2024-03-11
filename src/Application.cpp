@@ -1,7 +1,7 @@
 #include "Application.h"
 #include <filesystem>
 
-std::vector<PhysicsObject> Physics::all_sand;
+std::vector<PhysicsObject> Physics::ObjectsInScene;
 int PhysicsObject::nxt_id = 0;
 float Mouse::lastX = 400;
 float Mouse::lastY = 400;
@@ -55,9 +55,9 @@ void Application::Run()
 
         Object.Model_ID = m_Editor->ModelType;
 
-        Physics::all_sand.push_back(Object);
+        Physics::ObjectsInScene.push_back(Object);
 
-        Physics::all_sand.back().Spawn({0, -3});
+        Physics::ObjectsInScene.back().Spawn({0, -3});
 
         m_Editor->spawnCall = false;
     }

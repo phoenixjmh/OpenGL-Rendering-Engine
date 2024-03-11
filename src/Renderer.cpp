@@ -175,14 +175,18 @@ void Renderer::DrawScene(float alpha)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glCullFace(GL_BACK);
     // calculate various object's world matrix
-    for (int i = 0; i < Physics::all_sand.size(); i++)
+    if(Physics::GetObjectVectorAccess())
     {
-        auto s = Physics::all_sand[i];
+
+    for (int i = 0; i < Physics::ObjectsInScene.size(); i++)
+    {
+        auto s = Physics::ObjectsInScene[i];
 
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
         glm::vec3 render_position = {interpolatedPosition.x, -interpolatedPosition.y, s.editor_pos.z};
 
         DrawObject(s.radius * phys_to_rend_scaling_factor, render_position, s.Model_ID, i);
+    }
     }
 }
 
@@ -197,7 +201,7 @@ void Renderer::DepthPass(float alpha)
     glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
     glClear(GL_DEPTH_BUFFER_BIT);
     glCullFace(GL_FRONT);
-    for (auto &s : Physics::all_sand)
+    for (auto &s : Physics::ObjectsInScene)
     {
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
         glm::vec3 render_position = {interpolatedPosition.x, interpolatedPosition.y, 1};

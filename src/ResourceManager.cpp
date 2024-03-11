@@ -93,8 +93,11 @@ int GetModelTypeFromString(string s)
 }
 void ResourceManager::SaveScene(string scene_name)
 {
+    if(!Physics::GetObjectVectorAccess())
+        return;
+
     vector<Resource> resource_upload_buffer;
-    auto objects = Physics::all_sand;
+    auto objects = Physics::ObjectsInScene;
     for (auto object : objects)
     {
         string modelPath = ResourceManager::modelIDToString(object.Model_ID);
@@ -180,10 +183,8 @@ void ResourceManager::SaveResource(Resource r, string scene_name)
     filetowrite.close();
 }
 
-void ResourceManager::LoadScene(string name)
+bool ResourceManager::ReadSceneFileIn(string name, vector<string> &words)
 {
-
-    vector<string> words;
     string fullpath = RES_DIR + name + FILE_EXT;
 
     string word;
@@ -193,7 +194,7 @@ void ResourceManager::LoadScene(string name)
     {
         std::cout << "\n \n ERROR::RESMAN::NO FILE FOUND AT: " << fullpath << std::endl;
         Resource res("", "", "", "");
-        return;
+        return false;
     }
 
     while (file >> word)
@@ -201,8 +202,10 @@ void ResourceManager::LoadScene(string name)
         words.push_back(word);
     }
     file.close();
-
-    // parse data;
+    return true;
+}
+void ResourceManager::ParseResourceData(vector<string> words)
+{
     string _name, _color, _position, _modelpath;
     for (int i = 0; i < words.size() - 2; i++)
     {
@@ -235,14 +238,9 @@ void ResourceManager::LoadScene(string name)
         }
     }
     cout << "RESMAN FOUND " << m_Resources.size() << " OBJECTS TO LOAD\n";
-    // clear the current scene
-
-    Physics::ClearAll();
-    auto objects_in_scene = Physics::all_sand;
-
-    objects_in_scene;
-
-    // deserialize items
+}
+void ResourceManager::SpawnResources()
+{
     int counter = 0;
     for (auto r : m_Resources)
     {
@@ -252,10 +250,26 @@ void ResourceManager::LoadScene(string name)
 
         Object.Model_ID = GetModelTypeFromString(r.ModelPath);
 
-        Physics::all_sand.push_back(Object);
+        Physics::ObjectsInScene.push_back(Object);
 
-        Physics::all_sand.back().Spawn({pos.x, pos.y});
+        Physics::ObjectsInScene.back().Spawn({pos.x, pos.y});
     }
+}
+void ResourceManager::LoadScene(string name)
+{
+
+    vector<string> words;
+    if (!ReadSceneFileIn(name, words))
+        return;
+
+    ParseResourceData(words);
+
+    Physics::ClearAll();
+
+
+
+    SpawnResources();
+    m_Resources.clear();
 
     return;
 }

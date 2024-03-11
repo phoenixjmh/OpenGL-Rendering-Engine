@@ -1,5 +1,6 @@
 #include "Physics.h"
 
+bool Physics::m_CanAccessObjects=true;
 void Physics::OnWake()
 {
     // establish default values
@@ -8,14 +9,16 @@ void Physics::OnWake()
 }
 void Physics::Update(double deltaTime)
 {
+ if(GetObjectVectorAccess())
+ {
 
     const float bottom_border = 0;
     const float right_border = 20;
     const float left_border = -20;
-    for (auto &s : all_sand)
+    for (auto &s : ObjectsInScene)
     {
         ResolveBorderCollision(s, bottom_border, left_border, right_border, deltaTime);
-        for (auto &other_s : all_sand)
+        for (auto &other_s : ObjectsInScene)
         {
             if (s != other_s)
             {
@@ -30,6 +33,7 @@ void Physics::Update(double deltaTime)
         }
         s.update(deltaTime);
     }
+ }
 }
 
 /// Collision between two bodies
@@ -95,7 +99,7 @@ void Physics::ResolveBorderCollision(PhysicsObject &s, float ground_level, float
 
 void Physics::previousToCurrent()
 {
-    for (auto &obj : Physics::all_sand)
+    for (auto &obj : Physics::ObjectsInScene)
     {
         obj.prev_pos = obj.pos;
     }
@@ -108,5 +112,7 @@ float Physics::getDistance(float ax, float bx, float ay, float by)
 
 void Physics::ClearAll()
 {
-    all_sand.clear();
+    SetObjectVectorAccessibility(false);
+    ObjectsInScene.clear();
+    SetObjectVectorAccessibility(true);
 }
