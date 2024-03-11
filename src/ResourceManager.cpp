@@ -3,6 +3,22 @@
 string vec3_to_string(glm::vec3 v);
 glm::vec3 string_to_vec3(string s);
 int GetModelTypeFromString(string s);
+
+vector<string> ResourceManager::GetSceneList()
+{
+    vector<string> scene_names;
+    for (const auto &entry : filesystem::directory_iterator(RES_DIR))
+    {
+        if (entry.is_regular_file() && entry.path().extension() == FILE_EXT)
+        {
+            string filename = entry.path().filename().stem().string();
+            scene_names.push_back(filename);
+        }
+    }
+    ResourceManager::RefreshSceneList = false;
+    return scene_names;
+}
+
 void ResourceManager::LoadScene(string name)
 {
 
@@ -171,6 +187,7 @@ void ResourceManager::ParseResourceData(vector<string> words)
 }
 void ResourceManager::SpawnResources()
 {
+    Physics::SetObjectVectorAccessibility(false);
     int counter = 0;
     for (auto r : m_Resources)
     {
@@ -184,6 +201,7 @@ void ResourceManager::SpawnResources()
 
         Physics::ObjectsInScene.back().Spawn({pos.x, pos.y});
     }
+    Physics::SetObjectVectorAccessibility(true);
 }
 
 // helpers

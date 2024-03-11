@@ -15,6 +15,8 @@ string ResourceManager::FILE_EXT = "";
 string ResourceManager::RES_DIR = "";
 std::vector<Resource> ResourceManager::m_Resources;
 
+bool ResourceManager::RefreshSceneList = false;
+
 void Application::Init()
 {
     Time = 0;

@@ -1,6 +1,7 @@
 #include "Physics.h"
 
-bool Physics::m_CanAccessObjects=true;
+bool Physics::m_CanAccessObjects = true;
+bool FirstLoad = true;
 void Physics::OnWake()
 {
     // establish default values
@@ -9,31 +10,40 @@ void Physics::OnWake()
 }
 void Physics::Update(double deltaTime)
 {
- if(GetObjectVectorAccess())
- {
-
-    const float bottom_border = 0;
-    const float right_border = 20;
-    const float left_border = -20;
-    for (auto &s : ObjectsInScene)
+    if (GetObjectVectorAccess())
     {
-        ResolveBorderCollision(s, bottom_border, left_border, right_border, deltaTime);
-        for (auto &other_s : ObjectsInScene)
+
+        const float bottom_border = 0;
+        const float right_border = 20;
+        const float left_border = -20;
+        for (PhysicsObject &s : ObjectsInScene)
         {
-            if (s != other_s)
+            if (s.FirstLoad)
             {
-                const float distance = getDistance(s.pos.x, other_s.pos.x, s.pos.y, other_s.pos.y);
-
-                if (distance <= s.radius + other_s.radius)
+                s.update(deltaTime);
+                s.FirstLoad = false;
+                return;
+            }
+            else
+            {
+                ResolveBorderCollision(s, bottom_border, left_border, right_border, deltaTime);
+                for (PhysicsObject &other_s : ObjectsInScene)
                 {
+                    if (s != other_s)
+                    {
+                        const float distance = getDistance(s.pos.x, other_s.pos.x, s.pos.y, other_s.pos.y);
 
-                    ResolveCollision(s, other_s, distance, deltaTime);
+                        if (distance <= s.radius + other_s.radius)
+                        {
+
+                            ResolveCollision(s, other_s, distance, deltaTime);
+                        }
+                    }
                 }
+                s.update(deltaTime);
             }
         }
-        s.update(deltaTime);
     }
- }
 }
 
 /// Collision between two bodies
@@ -81,19 +91,23 @@ void Physics::ResolveBorderCollision(PhysicsObject &s, float ground_level, float
         // s.pos.y -= penetration_correction;
 
         s.prev_pos = s.pos;
+        Log("Bottom colish");
     }
 
     if (s.pos.x + s.radius > right_border)
     {
         float depth = (s.pos.x + s.radius) - right_border;
         float direction = -1;
+
         s.pos.x += depth * border_resolution_force * direction * deltaTime;
+        Log("right colish", "at", s.pos.x);
     }
     if (s.pos.x - s.radius < left_border)
     {
         float depth = (s.pos.x - s.radius) - left_border;
         float direction = -1;
         s.pos.x += depth * border_resolution_force * direction * deltaTime;
+        Log("Left Colish", "at", s.pos.x);
     }
 }
 

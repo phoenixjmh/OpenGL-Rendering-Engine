@@ -9,9 +9,10 @@ void PhysicsObject::update(float deltaTime)
     float gravity = 10;
     if (Physics::IsSimulating)
     {
+        Log(pos.x, "Position at start");
         acceleration.y = gravity;
 
-        glm::vec2 temp = pos;
+        prev_pos = pos;
 
         vel += acceleration * deltaTime;
         pos += vel * deltaTime;
@@ -22,7 +23,6 @@ void PhysicsObject::update(float deltaTime)
         // acceleration += vel - prev_vel;
 
         editor_pos = {pos.x, pos.y, editor_pos.z};
-        prev_pos = temp;
     }
 
     else
@@ -38,5 +38,7 @@ void PhysicsObject::Spawn(glm::vec2 start)
 {
     editor_pos = {start, 1};
     pos = prev_pos = editor_pos;
-    Log("Spawn");
+    vel = {0, 0};
+    acceleration = {0, 0};
+    Log("Spawn at", "x: ", pos.x, "y: ", pos.y);
 }

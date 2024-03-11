@@ -2,6 +2,8 @@
 
 #include "ResourceManager.h"
 #include "imgui.h"
+
+#include <imgui_internal.h>
 #include <iostream>
 #include <string>
 
@@ -52,6 +54,7 @@ void Editor::BuildRendererPropertiesWindow()
     ImGui::Checkbox("Flat Color Shading", &flat_color_shading);
     ImGui::End();
 }
+
 void Editor::PopulateImGui()
 {
     ImGui_ImplOpenGL3_NewFrame();
@@ -80,17 +83,26 @@ void Editor::PopulateImGui()
         }
         if (ImGui::Button("Save Scene"))
         {
-            ResourceManager::SaveScene("test");
+            m_ShowSaveScenePopup = true;
         }
         if (ImGui::Button("Load Scene"))
         {
-            ResourceManager::LoadScene("test");
+            m_ShowSceneSelectionPopup = true;
+            ResourceManager::RefreshSceneList = true;
+        }
+        if (m_ShowSceneSelectionPopup)
+        {
+            LoadSceneDialogue();
+        }
+        if (m_ShowSaveScenePopup)
+        {
+            SceneSaveDialogue();
         }
 
         ImGui::SameLine();
         DisplayModelSwitcher();
 
-        if(Physics::GetObjectVectorAccess())
+        if (Physics::GetObjectVectorAccess())
         {
             for (int i = 0; i < Physics::ObjectsInScene.size(); i++)
             {
@@ -105,6 +117,7 @@ void Editor::PopulateImGui()
                 ImGui::Dummy(ImVec2(0.0f, 20.0f));
             }
         }
+
         ImGui::End();
     }
 
@@ -122,10 +135,6 @@ void Editor::Render()
 {
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-}
-inline ImVec4 ImLerp(const ImVec4 &a, const ImVec4 &b, float t)
-{
-    return ImVec4(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t, a.z + (b.z - a.z) * t, a.w + (b.w - a.w) * t);
 }
 
 void Editor::init_imgui(GLFWwindow *window)
@@ -159,6 +168,61 @@ bool Editor::ModelTypeGetter(void *data, int idx, const char **out_text)
     return false;
 }
 
+void Editor::LoadSceneDialogue()
+{
+    if (ResourceManager::RefreshSceneList)
+    {
+        m_SceneList = ResourceManager::GetSceneList();
+    }
+    else
+    {
+        m_SceneList = m_SceneList;
+    }
+
+    ImGui::OpenPopup("Saved Scenes");
+    string filepath;
+    bool isOpen = false;
+    if (ImGui::BeginPopupModal("Saved Scenes", NULL, ImGuiWindowFlags_AlwaysAutoResize))
+    {
+        ImGui::Text("Select a scene");
+        ImGui::Separator();
+        for (auto s : m_SceneList)
+        {
+            if (ImGui::Selectable(s.c_str()))
+            {
+
+                filepath = s;
+                ResourceManager::LoadScene(filepath);
+                m_ShowSceneSelectionPopup = false;
+                ImGui::CloseCurrentPopup();
+            }
+        }
+
+        ImGui::EndPopup();
+    }
+}
+
+void Editor::SceneSaveDialogue()
+{
+    static char buffer[256];
+    string filepath;
+
+    ImGui::OpenPopup("Save Scene");
+    if (ImGui::BeginPopupModal("Save Scene", NULL, ImGuiWindowFlags_AlwaysAutoResize))
+    {
+        ImGui::Text("Scene Name");
+        ImGui::InputText("##FileName", buffer, sizeof(buffer));
+        ImGui::Separator();
+        if (ImGui::Button("Save", ImVec2(120, 0)))
+        {
+            filepath = buffer;
+            ResourceManager::SaveScene(filepath);
+            m_ShowSaveScenePopup = false;
+            ImGui::CloseCurrentPopup();
+        }
+        ImGui::EndPopup();
+    }
+}
 void Editor::ConfigureStyle()
 {
 

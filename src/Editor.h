@@ -12,12 +12,13 @@ class Editor
   public:
     Editor(GLFWwindow *window)
         : ui_xpos(0), ui_ypos(0), ui_size(1), debug_is_simulate(false), flat_color_shading(false), camera_input(false),
-          spawnCall(false)
+          spawnCall(false), m_ShowSaveScenePopup(false), m_ShowSceneSelectionPopup(false)
     {
         init_imgui(window);
         Log("New GUI");
     }
 
+    void SceneSaveDialogue();
     void PopulateImGui();
     void Render();
     void Shutdown();
@@ -33,6 +34,8 @@ class Editor
     bool renderer_lighting;
     ImGuiIO *io;
     bool spawnCall;
+    bool m_ShowSceneSelectionPopup;
+    bool m_ShowSaveScenePopup;
 
   private:
     void BuildPhysicsPropertiesWindow();
@@ -40,7 +43,9 @@ class Editor
     void DisplayModelSwitcher();
     void AddObjectTransformEditor(unsigned int index);
     static bool ModelTypeGetter(void *data, int idx, const char **out_text);
+    void LoadSceneDialogue();
     void init_imgui(GLFWwindow *window);
     void ConfigureStyle();
+    std::vector<std::string> m_SceneList;
     friend class ResourceManager;
 };
