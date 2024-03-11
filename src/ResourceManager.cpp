@@ -93,7 +93,7 @@ int GetModelTypeFromString(string s)
 }
 void ResourceManager::SaveScene(string scene_name)
 {
-    if(!Physics::GetObjectVectorAccess())
+    if (!Physics::GetObjectVectorAccess())
         return;
 
     vector<Resource> resource_upload_buffer;
@@ -259,6 +259,7 @@ void ResourceManager::LoadScene(string name)
 {
 
     vector<string> words;
+
     if (!ReadSceneFileIn(name, words))
         return;
 
@@ -266,9 +267,8 @@ void ResourceManager::LoadScene(string name)
 
     Physics::ClearAll();
 
-
-
     SpawnResources();
+
     m_Resources.clear();
 
     return;
