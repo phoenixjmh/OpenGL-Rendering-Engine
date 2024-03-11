@@ -1,95 +1,25 @@
 #include "ResourceManager.h"
 
-string vec3_to_string(glm::vec3 v)
+string vec3_to_string(glm::vec3 v);
+glm::vec3 string_to_vec3(string s);
+int GetModelTypeFromString(string s);
+void ResourceManager::LoadScene(string name)
 {
-    string x, y, z;
-    x = to_string(v.x);
-    y = to_string(v.y);
-    z = to_string(v.z);
-    return "[" + x + "," + y + "," + z + "]";
-}
-glm::vec3 string_to_vec3(string s)
-{
-    bool parseX, parseY, parseZ = false;
 
-    string xstr, ystr, zstr;
+    vector<string> words;
 
-    for (auto i = 0; i < s.length() - 5; i++)
-    {
+    if (!ReadSceneFileIn(name, words))
+        return;
 
-        if (s[i] == '[')
-        {
-            parseX = true;
-            continue;
-        }
-        if (parseX)
-        {
-            if (s[i] == ',')
-            {
-                parseX = false;
-                parseY = true;
-                continue;
-            }
-            else
-            {
-                xstr += s[i];
-            }
-        }
+    ParseResourceData(words);
 
-        if (parseY)
-        {
-            if (s[i] == ',')
-            {
-                parseY = false;
-                parseZ = true;
-                continue;
-            }
-            else
-            {
-                ystr += s[i];
-            }
-        }
-        if (parseZ)
-        {
-            if (s[i] == ',')
-            {
-                parseZ = false;
-                continue;
-            }
-            else
-            {
-                zstr += s[i];
-            }
-        }
-    }
-    cout << xstr << " : " << ystr << " : " << zstr << " : "
-         << "\n";
-    float x = stof(xstr);
-    float y = stof(ystr);
-    float z = stof(zstr);
+    Physics::ClearAll();
 
-    return {x, y, z};
-}
-int GetModelTypeFromString(string s)
-{
-    if (s == "sphere")
-    {
+    SpawnResources();
 
-        return 0;
-    }
-    if (s == "backpack")
-    {
-        return 1;
-    }
-    if (s == "cube")
-    {
-        return 2;
-    }
-    if (s == "floor")
-    {
-        return 3;
-    }
-    return -1;
+    m_Resources.clear();
+
+    return;
 }
 void ResourceManager::SaveScene(string scene_name)
 {
@@ -255,21 +185,95 @@ void ResourceManager::SpawnResources()
         Physics::ObjectsInScene.back().Spawn({pos.x, pos.y});
     }
 }
-void ResourceManager::LoadScene(string name)
+
+// helpers
+
+string vec3_to_string(glm::vec3 v)
 {
+    string x, y, z;
+    x = to_string(v.x);
+    y = to_string(v.y);
+    z = to_string(v.z);
+    return "[" + x + "," + y + "," + z + "]";
+}
+glm::vec3 string_to_vec3(string s)
+{
+    bool parseX, parseY, parseZ = false;
 
-    vector<string> words;
+    string xstr, ystr, zstr;
 
-    if (!ReadSceneFileIn(name, words))
-        return;
+    for (auto i = 0; i < s.length() - 5; i++)
+    {
 
-    ParseResourceData(words);
+        if (s[i] == '[')
+        {
+            parseX = true;
+            continue;
+        }
+        if (parseX)
+        {
+            if (s[i] == ',')
+            {
+                parseX = false;
+                parseY = true;
+                continue;
+            }
+            else
+            {
+                xstr += s[i];
+            }
+        }
 
-    Physics::ClearAll();
+        if (parseY)
+        {
+            if (s[i] == ',')
+            {
+                parseY = false;
+                parseZ = true;
+                continue;
+            }
+            else
+            {
+                ystr += s[i];
+            }
+        }
+        if (parseZ)
+        {
+            if (s[i] == ',')
+            {
+                parseZ = false;
+                continue;
+            }
+            else
+            {
+                zstr += s[i];
+            }
+        }
+    }
+    float x = stof(xstr);
+    float y = stof(ystr);
+    float z = stof(zstr);
 
-    SpawnResources();
+    return {x, y, z};
+}
+int GetModelTypeFromString(string s)
+{
+    if (s == "sphere")
+    {
 
-    m_Resources.clear();
-
-    return;
+        return 0;
+    }
+    if (s == "backpack")
+    {
+        return 1;
+    }
+    if (s == "cube")
+    {
+        return 2;
+    }
+    if (s == "floor")
+    {
+        return 3;
+    }
+    return -1;
 }
