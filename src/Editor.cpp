@@ -19,7 +19,13 @@ void Editor::AddObjectTransformEditor(unsigned int index)
     std::string str_y = "Y: " + std::to_string(index);
     std::string str_z = "Z: " + std::to_string(index);
     std::string str_size = "Scale: " + std::to_string(index);
+
+    std::string uuid = std::to_string(Physics::ObjectsInScene[index].Object_UUID);
     // float& zpos = obj.pos.z;
+    auto obj = &Physics::ObjectsInScene[index];
+
+    ImGui::Text(uuid.c_str());
+
     ImGui::SliderFloat(str_x.c_str(), xpos, -10, 10);
 
     ImGui::SliderFloat(str_y.c_str(), ypos, -10, 10);

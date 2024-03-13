@@ -19,15 +19,23 @@ class Physics
                                        float deltaTime);
     static void previousToCurrent();
 
-    static bool GetObjectVectorAccess(){return  m_CanAccessObjects;}
+    static bool GetObjectVectorAccess()
+    {
+        return m_CanAccessObjects;
+    }
 
-    static void SetObjectVectorAccessibility(bool b){m_CanAccessObjects=b;}
+    static void SetObjectVectorAccessibility(bool b)
+    {
+        m_CanAccessObjects = b;
+    }
 
     static float getDistance(float ax, float bx, float ay, float by);
 
     static float border_resolution_force;
 
     static float object_resolution_force;
+
+    static unsigned int UUID_DISPENSER;
 
     static void ClearAll();
 

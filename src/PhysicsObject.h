@@ -11,6 +11,7 @@ class PhysicsObject
     }
 
   public:
+    unsigned int Object_UUID;
     unsigned int Model_ID;
     float mass;
     glm::vec2 acceleration;

@@ -36,6 +36,9 @@ void PhysicsObject::update(float deltaTime)
 
 void PhysicsObject::Spawn(glm::vec2 start)
 {
+
+    Object_UUID = Physics::UUID_DISPENSER;
+    Physics::UUID_DISPENSER++;
     editor_pos = {start, 1};
     pos = prev_pos = editor_pos;
     vel = {0, 0};

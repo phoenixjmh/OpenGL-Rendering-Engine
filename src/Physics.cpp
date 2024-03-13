@@ -1,5 +1,6 @@
 #include "Physics.h"
 
+unsigned int Physics::UUID_DISPENSER = 0;
 bool Physics::m_CanAccessObjects = true;
 bool FirstLoad = true;
 void Physics::OnWake()
@@ -126,6 +127,7 @@ float Physics::getDistance(float ax, float bx, float ay, float by)
 
 void Physics::ClearAll()
 {
+    Physics::UUID_DISPENSER = 0;
     SetObjectVectorAccessibility(false);
     ObjectsInScene.clear();
     SetObjectVectorAccessibility(true);
