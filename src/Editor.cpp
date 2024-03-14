@@ -7,38 +7,25 @@
 #include <iostream>
 #include <string>
 
-void Editor::AddObjectTransformEditor(unsigned int index)
+void Editor::AddHeirarchyEntry(unsigned int index)
 {
-
-    float *xpos = &Physics::ObjectsInScene[index].editor_pos.x;
-    float *ypos = &Physics::ObjectsInScene[index].editor_pos.y;
-    float *zpos = &Physics::ObjectsInScene[index].editor_pos.z;
-    float *size = &Physics::ObjectsInScene[index].radius;
-
-    std::string str_x = "X: " + std::to_string(index);
-    std::string str_y = "Y: " + std::to_string(index);
-    std::string str_z = "Z: " + std::to_string(index);
-    std::string str_size = "Scale: " + std::to_string(index);
-
     std::string uuid = std::to_string(Physics::ObjectsInScene[index].Object_UUID);
-    // float& zpos = obj.pos.z;
-    auto obj = &Physics::ObjectsInScene[index];
 
-    ImGui::Text(uuid.c_str());
-
-    ImGui::SliderFloat(str_x.c_str(), xpos, -10, 10);
-
-    ImGui::SliderFloat(str_y.c_str(), ypos, -10, 10);
-
-    ImGui::SliderFloat(str_z.c_str(), zpos, -10, 10);
-
-    ImGui::SliderFloat(str_size.c_str(), size, 1, 10);
+    std::string obj_name = Physics::ObjectsInScene[index].Name + "##" + uuid;
+    if (ImGui::Selectable(obj_name.c_str(), false, ImGuiSelectableFlags_SelectOnRelease, ImVec2(200, 10)))
+    {
+        object_in_context = &Physics::ObjectsInScene[index];
+        Log("Show me the tranny");
+    }
 }
 void Editor::BuildPhysicsPropertiesWindow()
 {
     ImGui::Begin("Physics Properties");
     ImGui::SliderFloat("Object Collision Resolution Force", &Physics::object_resolution_force, 0, 200);
     ImGui::SliderFloat("Border Collision Resolution Force", &Physics::border_resolution_force, 0, 200);
+
+    ImGui::Checkbox("Simulate", &debug_is_simulate);
+
     ImGui::End();
 }
 void Editor::DisplayModelSwitcher()
@@ -46,7 +33,9 @@ void Editor::DisplayModelSwitcher()
     const char *const options[] = {"sphere", "backpack", "cube", "floor"};
     int size = sizeof(options) / sizeof(const char *);
     // Call ListBox and update the member variable
-    if (ImGui::ListBox("Model:", &ModelType, ModelTypeGetter, (void *)options, size, 4))
+    ImGui::Text("Model Selection");
+    ImGui::SameLine();
+    if (ImGui::ListBox("##SELECTOR", &ModelType, ModelTypeGetter, (void *)options, size, 4))
     {
         // ListBox value changed, update the member variable
         ModelType = ModelType;
@@ -56,11 +45,30 @@ void Editor::BuildRendererPropertiesWindow()
 {
 
     ImGui::Begin("Renderer Properties");
+    ImGui::Checkbox("Camera Control", &camera_input);
     ImGui::Checkbox("Render Lighting", &renderer_lighting);
     ImGui::Checkbox("Flat Color Shading", &flat_color_shading);
     ImGui::End();
 }
 
+void Editor::DisplayHeirarchyPanel()
+{
+    if (Physics::GetObjectVectorAccess() && !Physics::ObjectsInScene.empty())
+    {
+        for (int i = 0; i < Physics::ObjectsInScene.size(); i++)
+        {
+            unsigned int ModelID = Physics::ObjectsInScene[i].Model_ID;
+
+            std::string name = ResourceManager::modelIDToString(ModelID);
+
+            Physics::ObjectsInScene[i].Name = name;
+
+            AddHeirarchyEntry(i);
+
+            ImGui::Dummy(ImVec2(0.0f, 20.0f));
+        }
+    }
+}
 void Editor::PopulateImGui()
 {
     ImGui_ImplOpenGL3_NewFrame();
@@ -75,14 +83,11 @@ void Editor::PopulateImGui()
     {
         ImGui::Begin("Scene Hierarchy");
 
-        ImGui::Checkbox("Simulate", &debug_is_simulate);
+        DisplayHeirarchyPanel();
 
-        ImGui::Checkbox("Camera Control", &camera_input);
+        ImGui::End();
+        ImGui::Begin("Inspector");
 
-        if (ImGui::Button("Spawn Object"))
-        {
-            spawnCall = true;
-        }
         if (ImGui::Button("Clear Objects"))
         {
             Physics::ClearAll();
@@ -105,23 +110,41 @@ void Editor::PopulateImGui()
             SceneSaveDialogue();
         }
 
-        ImGui::SameLine();
+        // selection heirarchy
+
+        // float& zpos = obj.pos.z;
+
         DisplayModelSwitcher();
 
-        if (Physics::GetObjectVectorAccess())
+        if (ImGui::Button("Spawn Object"))
         {
-            for (int i = 0; i < Physics::ObjectsInScene.size(); i++)
-            {
-                unsigned int ModelID = Physics::ObjectsInScene[i].Model_ID;
+            spawnCall = true;
+        }
 
-                std::string name = ResourceManager::modelIDToString(ModelID);
+        ImGui::Dummy(ImVec2(0, 20.f));
 
-                ImGui::SeparatorText(name.c_str());
+        if (object_in_context != nullptr)
+        {
+            std::string str_x, str_y, str_z, str_size;
+            float *xpos, *ypos, *zpos, *size;
 
-                AddObjectTransformEditor(i);
+            xpos = &object_in_context->editor_pos.x;
+            ypos = &object_in_context->editor_pos.y;
+            zpos = &object_in_context->editor_pos.z;
+            size = &object_in_context->radius;
 
-                ImGui::Dummy(ImVec2(0.0f, 20.0f));
-            }
+            str_x = "X: " + std::to_string(object_in_context->Object_UUID);
+            str_y = "Y: " + std::to_string(object_in_context->Object_UUID);
+            str_z = "Z: " + std::to_string(object_in_context->Object_UUID);
+            str_size = "Scale: " + std::to_string(object_in_context->Object_UUID);
+
+            ImGui::SliderFloat(str_x.c_str(), xpos, -10, 10);
+
+            ImGui::SliderFloat(str_y.c_str(), ypos, -10, 10);
+
+            ImGui::SliderFloat(str_z.c_str(), zpos, -10, 10);
+
+            ImGui::SliderFloat(str_size.c_str(), size, 1, 10);
         }
 
         ImGui::End();
@@ -314,4 +337,5 @@ void Editor::ConfigureStyle()
     style.LogSliderDeadzone = 4;
     style.TabRounding = 4;
     io->Fonts->AddFontFromFileTTF("external/imgui/misc/fonts/Roboto-Medium.ttf", 13);
+    ImGui::GetStyle().ScaleAllSizes(2.f);
 }

@@ -12,7 +12,7 @@ class Editor
   public:
     Editor(GLFWwindow *window)
         : ui_xpos(0), ui_ypos(0), ui_size(1), debug_is_simulate(false), flat_color_shading(false), camera_input(false),
-          spawnCall(false), m_ShowSaveScenePopup(false), m_ShowSceneSelectionPopup(false)
+          spawnCall(false), m_ShowSaveScenePopup(false), m_ShowSceneSelectionPopup(false), object_in_context(nullptr)
     {
         init_imgui(window);
         Log("New GUI");
@@ -40,12 +40,14 @@ class Editor
   private:
     void BuildPhysicsPropertiesWindow();
     void BuildRendererPropertiesWindow();
+    void DisplayHeirarchyPanel();
     void DisplayModelSwitcher();
-    void AddObjectTransformEditor(unsigned int index);
+    void AddHeirarchyEntry(unsigned int index);
     static bool ModelTypeGetter(void *data, int idx, const char **out_text);
     void LoadSceneDialogue();
     void init_imgui(GLFWwindow *window);
     void ConfigureStyle();
     std::vector<std::string> m_SceneList;
+    PhysicsObject *object_in_context;
     friend class ResourceManager;
 };

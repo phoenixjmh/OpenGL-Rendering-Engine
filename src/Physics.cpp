@@ -2,12 +2,16 @@
 
 unsigned int Physics::UUID_DISPENSER = 0;
 bool Physics::m_CanAccessObjects = true;
-bool FirstLoad = true;
+bool Physics::first_update = true;
 void Physics::OnWake()
 {
+    for (auto &s : Physics::ObjectsInScene)
+    {
+        s.FirstLoad = true;
+    }
     // establish default values
-    border_resolution_force = 50.f;
-    object_resolution_force = 50.f;
+
+    first_update = false;
 }
 void Physics::Update(double deltaTime)
 {
@@ -22,28 +26,40 @@ void Physics::Update(double deltaTime)
             if (s.FirstLoad)
             {
                 s.update(deltaTime);
+                s.acceleration = {0, 0};
                 s.FirstLoad = false;
                 return;
             }
             else
             {
-                ResolveBorderCollision(s, bottom_border, left_border, right_border, deltaTime);
-                for (PhysicsObject &other_s : ObjectsInScene)
+                if (Physics::IsSimulating)
                 {
-                    if (s != other_s)
+                    ResolveBorderCollision(s, bottom_border, left_border, right_border, deltaTime);
+                    for (PhysicsObject &other_s : ObjectsInScene)
                     {
-                        const float distance = getDistance(s.pos.x, other_s.pos.x, s.pos.y, other_s.pos.y);
-
-                        if (distance <= s.radius + other_s.radius)
+                        if (s != other_s)
                         {
+                            const float distance = getDistance(s.pos.x, other_s.pos.x, s.pos.y, other_s.pos.y);
 
-                            ResolveCollision(s, other_s, distance, deltaTime);
+                            if (distance <= s.radius + other_s.radius)
+                            {
+
+                                ResolveCollision(s, other_s, distance, deltaTime);
+                            }
                         }
                     }
                 }
                 s.update(deltaTime);
             }
         }
+    }
+}
+void Physics::Start()
+{
+    Physics::IsSimulating = true;
+    if (first_update)
+    {
+        Physics::OnWake();
     }
 }
 
@@ -92,7 +108,7 @@ void Physics::ResolveBorderCollision(PhysicsObject &s, float ground_level, float
         // s.pos.y -= penetration_correction;
 
         s.prev_pos = s.pos;
-        Log("Bottom colish");
+        // Log("Bottom colish");
     }
 
     if (s.pos.x + s.radius > right_border)
@@ -101,14 +117,14 @@ void Physics::ResolveBorderCollision(PhysicsObject &s, float ground_level, float
         float direction = -1;
 
         s.pos.x += depth * border_resolution_force * direction * deltaTime;
-        Log("right colish", "at", s.pos.x);
+        // Log("right colish", "at", s.pos.x);
     }
     if (s.pos.x - s.radius < left_border)
     {
         float depth = (s.pos.x - s.radius) - left_border;
         float direction = -1;
         s.pos.x += depth * border_resolution_force * direction * deltaTime;
-        Log("Left Colish", "at", s.pos.x);
+        // Log("Left Colish", "at", s.pos.x);
     }
 }
 

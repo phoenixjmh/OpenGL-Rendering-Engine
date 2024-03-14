@@ -7,7 +7,6 @@ float Mouse::lastX = 400;
 float Mouse::lastY = 400;
 bool Mouse::first = true;
 bool Mouse::enabled = false;
-bool Physics::first_update = true;
 bool Physics::IsSimulating = false;
 float Physics::border_resolution_force = 0.5;
 float Physics::object_resolution_force = 0.5;
@@ -57,6 +56,8 @@ void Application::Run()
 
         Object.Model_ID = m_Editor->ModelType;
 
+        Object.Name = ResourceManager::modelIDToString(Object.Model_ID);
+
         Physics::ObjectsInScene.push_back(Object);
 
         Physics::ObjectsInScene.back().Spawn({0, -3});
@@ -66,7 +67,7 @@ void Application::Run()
 
     if (m_Editor->debug_is_simulate)
     {
-        Physics::IsSimulating = true;
+        Physics::Start();
     }
     else
     {

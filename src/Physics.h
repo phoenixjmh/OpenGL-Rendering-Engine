@@ -10,6 +10,7 @@ class Physics
     static void OnWake();
 
     static void Update(double deltaTime);
+    static void Start();
 
     static std::vector<PhysicsObject> ObjectsInScene;
 
