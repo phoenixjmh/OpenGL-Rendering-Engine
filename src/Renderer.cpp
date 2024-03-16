@@ -6,6 +6,9 @@
 #include <vector>
 
 #include "Editor.h"
+
+#include <glad/glad.h>
+
 #define LOG(x) std::cout << x << "\n";
 ShapeFactory shapeFactory;
 
@@ -13,6 +16,8 @@ void Renderer::Init()
 {
     createWindow(1024, 1024);
     initGlad();
+    // glDebugMessageCallback(MessageCallback,0);
+    // glEnable(GL_DEBUG_OUTPUT);
     glfwSwapInterval(1);
 
     InitScene();
@@ -23,9 +28,11 @@ void Renderer::InitScene()
     m_sceneData.light_color = {1, 1, 1};
     m_sceneData.light_position = glm::vec3(0.5f, 2, 2);
     const unsigned int DM_WIDTH = 1024, DM_HEIGHT = 1024;
+
     createShaders();
     createModels();
     createDepthMap();
+    createUUIDMap();
 }
 
 void Renderer::BeginDraw()
@@ -42,13 +49,15 @@ void Renderer::createShaders()
     Shader m_depth("shaders/depth.vert", "shaders/depth.frag");
     Shader NOLIGHTING("shaders/shader.vert", "shaders/NOLIGHTING.frag");
     Shader FLAT_COLOR("shaders/shader.vert", "shaders/FLATCOLOR.frag");
+    Shader m_uuidShader("shaders/shader.vert", "shaders/UUID.frag");
 
-    m_Shaders = {m_shader, m_depth, NOLIGHTING, FLAT_COLOR};
+    m_Shaders = {m_shader, m_depth, NOLIGHTING, FLAT_COLOR, m_uuidShader};
 
     PHONG_SHADERINDEX = 0;
     DEPTH_SHADERINDEX = 1;
     NOLIGHTING_SHADERINDEX = 2;
     FLATCOLOR_SHADERINDEX = 3;
+    UUID_SHADERINDEX = 4;
 }
 
 void Renderer::createModels()
@@ -91,6 +100,7 @@ void Renderer::createDepthMap()
 {
     const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
     glGenFramebuffers(1, &depthMapFBO);
+
     // create depth texture
     glGenTextures(1, &depthMap);
     glBindTexture(GL_TEXTURE_2D, depthMap);
@@ -110,7 +120,35 @@ void Renderer::createDepthMap()
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id, int index, bool depth_pass)
+void Renderer::createUUIDMap()
+{
+    // creating a texture to render the UUID of an object into
+    const unsigned int UUID_WIDTH = 1024, UUID_HEIGHT = 1024;
+    glGenFramebuffers(1, &uuidMapFBO);
+    glGenTextures(1, &uuidMap);
+    glBindTexture(GL_TEXTURE_2D, uuidMap);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_R32I, UUID_WIDTH, UUID_HEIGHT, 0, GL_RED_INTEGER, GL_UNSIGNED_BYTE, NULL);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    // float borderColor[] = {1.0, 1.0, 1.0, 1.0};
+
+    // attach depth texture as FBO's depth buffer
+    glBindFramebuffer(GL_FRAMEBUFFER, uuidMapFBO);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, uuidMap, 0);
+    if(glCheckFramebufferStatus(GL_FRAMEBUFFER)==GL_FRAMEBUFFER_COMPLETE)
+    {
+        cout<<"Created UUID FBO";
+    }
+    // glDrawBuffer(GL_NONE);
+    // glReadBuffer(GL_NONE);
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+}
+
+void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id, int index, int object_uuid,
+                          bool depth_pass, bool uuid_pass)
 {
     Model activeModel = m_Models[model_id];
     Shader activeShader = m_Shaders[PHONG_SHADERINDEX];
@@ -125,6 +163,8 @@ void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,
 
     if (depth_pass)
         activeShader = m_Shaders[DEPTH_SHADERINDEX];
+    if (uuid_pass)
+        activeShader = m_Shaders[UUID_SHADERINDEX];
 
     activeShader.use();
     init_mvp();
@@ -140,6 +180,12 @@ void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,
                                 glm::clamp((float)(index * index) / 8, (float)0.1, (float)1.0)};
         activeShader.setVec3("flat_color", flat_color);
     }
+    // hacky shit for the uuid pass
+    if(uuid_pass)
+    activeShader.setInt("UUID", 30);
+    else
+        activeShader.setInt("UUID",-1);
+    // end hacky shit...everything from this point on is incredibly good and professional
 
     activeShader.setVec3("viewPos", camera.camera_position);
     activeShader.setVec3("objectColor", {1, .3, .3});
@@ -162,6 +208,7 @@ void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,
     activeShader.setMat4("ModelMatrix", ModelMatrix);
 
     activeModel.Draw(activeShader, depthMap);
+
 }
 
 void Renderer::DrawScene(float alpha)
@@ -169,25 +216,35 @@ void Renderer::DrawScene(float alpha)
     // Depth pass for shadows
     float phys_to_rend_scaling_factor = 0.70; // THE MAGIC NUMBER?!
     DepthPass(alpha);
-
+    ObjectIDPass(alpha);
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glViewport(0, 0, m_width, m_height);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glCullFace(GL_BACK);
     // calculate various object's world matrix
-    if(Physics::GetObjectVectorAccess())
+    if (Physics::GetObjectVectorAccess())
     {
 
-    for (int i = 0; i < Physics::ObjectsInScene.size(); i++)
-    {
-        auto s = Physics::ObjectsInScene[i];
+        for (int i = 0; i < Physics::ObjectsInScene.size(); i++)
+        {
+            auto s = Physics::ObjectsInScene[i];
 
-        glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
-        glm::vec3 render_position = {interpolatedPosition.x, -interpolatedPosition.y, s.editor_pos.z};
+            glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
+            glm::vec3 render_position = {interpolatedPosition.x, -interpolatedPosition.y, s.editor_pos.z};
 
-        DrawObject(s.radius * phys_to_rend_scaling_factor, render_position, s.Model_ID, i);
+            DrawObject(s.radius * phys_to_rend_scaling_factor, render_position, s.Model_ID, i, s.Object_UUID);
+        }
     }
-    }
+
+
+    // int pixelData;
+    // int x=500;
+    // int y=500;
+    // glReadBuffer(GL_COLOR_ATTACHMENT1);
+    // glReadPixels(Mouse::lastX,Mouse::lastY,1,1,GL_RED_INTEGER,GL_INT,&pixelData);
+    // // Log(pixelData,"DATA:::::");
+    // Mouse::GetMouseXY();
+    // // Log(Mouse::lastX);
 }
 
 void Renderer::DepthPass(float alpha)
@@ -206,8 +263,43 @@ void Renderer::DepthPass(float alpha)
         glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
         glm::vec3 render_position = {interpolatedPosition.x, interpolatedPosition.y, 1};
 
-        DrawObject(1, {s.pos.x, s.pos.y, s.editor_pos.z}, s.Model_ID, 0, depth_pass);
+        DrawObject(1, {s.pos.x, s.pos.y, s.editor_pos.z}, s.Model_ID, 0, 0, depth_pass);
     }
+}
+
+void Renderer::ObjectIDPass(float alpha)
+{
+    bool uuid_pass = true;
+
+    Shader uuid_shader = m_Shaders[UUID_SHADERINDEX];
+    uuid_shader.use();
+    uuid_shader.setInt("UUID",30);
+    glViewport(0, 0, m_width, m_height);
+    glBindFramebuffer(GL_FRAMEBUFFER, uuidMapFBO);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glCullFace(GL_BACK);
+    for (auto &s : Physics::ObjectsInScene)
+    {
+        glm::vec2 interpolatedPosition = s.pos * alpha + s.prev_pos * (1.0f - alpha);
+        glm::vec3 render_position = {interpolatedPosition.x, interpolatedPosition.y, 1};
+
+        DrawObject(1, {s.pos.x, s.pos.y, s.editor_pos.z}, s.Model_ID, 0, s.Object_UUID, false, uuid_pass);
+    }
+    auto [mx,my] =  ImGui::GetMousePos();
+    int viewport[4];
+    glGetIntegerv(GL_VIEWPORT,viewport);
+    mx/= ImGui::GetIO().DisplaySize.x*viewport[2];
+    my=(1.0f-my/ImGui::GetIO().DisplaySize.y)*viewport[3];
+
+    //^^^^buttskin
+
+    GLint pixelData;
+    glReadBuffer(GL_COLOR_ATTACHMENT0);
+    glReadPixels(1024/2, 1024/2, 1, 1, GL_RED_INTEGER, GL_UNSIGNED_BYTE, &pixelData);
+    if(pixelData==30)
+    std::cout << "UUID: " << pixelData << std::endl;
+
+    glBindFramebuffer(GL_FRAMEBUFFER,0);
 }
 
 void Renderer::Clean()

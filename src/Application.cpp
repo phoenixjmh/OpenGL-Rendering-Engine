@@ -5,6 +5,8 @@ std::vector<PhysicsObject> Physics::ObjectsInScene;
 int PhysicsObject::nxt_id = 0;
 float Mouse::lastX = 400;
 float Mouse::lastY = 400;
+double Mouse::xPos = 0;
+double Mouse::yPos = 0;
 bool Mouse::first = true;
 bool Mouse::enabled = false;
 bool Physics::IsSimulating = false;
@@ -114,8 +116,41 @@ void Application::Close()
     m_Renderer->Clean();
     delete (m_Editor);
 }
+void PrintGLERR(std::string location)
+{
+    GLenum err = glGetError();
+    if (err != GL_NO_ERROR)
+    {
+        cout << "OpenGL error from " <<location<<" :: " <<err<<"\n";
+    }
+
+}
 void Application::processInput(GLFWwindow *window, Renderer *m_Renderer, Editor &editor, float deltaTime)
 {
+
+    glBindFramebuffer(GL_FRAMEBUFFER,m_Renderer->uuidMapFBO);
+    PrintGLERR("BindingFBO in app");
+
+    auto [mx,my] =  ImGui::GetMousePos();
+    int viewport[4];
+    glGetIntegerv(GL_VIEWPORT,viewport);
+    mx/= ImGui::GetIO().DisplaySize.x*viewport[2];
+    my=(1.0f-my/ImGui::GetIO().DisplaySize.y)*viewport[3];
+
+    // std::cout<<"X: "<<mx<<" Y: "<<my<<"\n";
+    int pixelData;
+    glReadBuffer(GL_COLOR_ATTACHMENT0);
+    PrintGLERR("Reading buffer");
+    glReadPixels(1024/2,1024/2,1,1,GL_RED_INTEGER,GL_INT,&pixelData);
+    PrintGLERR("Reading pixels");
+
+
+    // cout<<ImGui::GetIO().DisplaySize.x<<" DISPX\n";
+    // cout<<ImGui::GetIO().DisplaySize.y<<" DISPy\n";
+    // if(pixelData==30)
+    cout<<pixelData<<"\n";
+    glBindFramebuffer(GL_FRAMEBUFFER,0);
+
 
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
@@ -149,20 +184,20 @@ void Application::processInput(GLFWwindow *window, Renderer *m_Renderer, Editor 
     if (editor.camera_input)
     {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-        double xpos;
-        double ypos;
-        glfwGetCursorPos(window, &xpos, &ypos);
+        // double xpos;
+        // double ypos;
+        glfwGetCursorPos(window, &Mouse::xPos, &Mouse::yPos);
         if (Mouse::first)
         {
-            Mouse::lastX = xpos;
-            Mouse::lastY = ypos;
+            Mouse::lastX = Mouse::xPos;
+            Mouse::lastY = Mouse::yPos;
             Mouse::first = false;
         }
 
-        float xoffset = xpos - Mouse::lastX;
-        float yoffset = Mouse::lastY - ypos;
-        Mouse::lastX = xpos;
-        Mouse::lastY = ypos;
+        float xoffset = Mouse::xPos - Mouse::lastX;
+        float yoffset = Mouse::lastY - Mouse::yPos;
+        Mouse::lastX = Mouse::xPos;
+        Mouse::lastY = Mouse::yPos;
 
         float sensitivity = 0.1f;
         xoffset *= sensitivity;

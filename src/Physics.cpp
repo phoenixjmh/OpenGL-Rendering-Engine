@@ -100,13 +100,7 @@ void Physics::ResolveBorderCollision(PhysicsObject &s, float ground_level, float
         float depth = (s.pos.y + s.radius) - ground_level;
         glm::vec2 temppos = s.pos;
         s.pos.y -= depth;
-        // s.acceleration = -s.acceleration;
         s.vel.y = -s.vel.y * elasticity;
-        // const float percent = 0.2f; // usually 20% to 80%
-        // const float slop = 0.01f;   // usually 0.01 to 0.1
-        // float penetration_correction = std::max(depth - slop, 0.0f) / (1.0f / s.mass) * percent;
-        // s.pos.y -= penetration_correction;
-
         s.prev_pos = s.pos;
         // Log("Bottom colish");
     }
