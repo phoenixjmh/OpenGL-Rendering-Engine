@@ -116,40 +116,44 @@ void Application::Close()
     m_Renderer->Clean();
     delete (m_Editor);
 }
-void PrintGLERR(std::string location)
+void PrintGLERR(std::string operation)
 {
     GLenum err = glGetError();
     if (err != GL_NO_ERROR)
     {
-        cout << "OpenGL error from " <<location<<" :: " <<err<<"\n";
+        cout << "OpenGL error when " << operation << " :: " << err << "\n";
+    }
+}
+void Application::MousePicking(Renderer *m_Renderer,GLFWwindow* window)
+{
+    // Log(m_Renderer->uuidMapFBO, "Just before error checking");
+    glBindFramebuffer(GL_FRAMEBUFFER, m_Renderer->uuidMapFBO);
+    PrintGLERR("Binding FBO in app");
+    auto [mx, my] = ImGui::GetMousePos();
+    int viewport[4];
+    glGetIntegerv(GL_VIEWPORT, viewport);
+
+    int presumedUUID;
+    glReadBuffer(GL_COLOR_ATTACHMENT0);
+    PrintGLERR("Reading buffer");
+    glReadPixels(mx, my, 1, 1, GL_RED_INTEGER, GL_INT, &presumedUUID);
+    PrintGLERR("Reading pixels");
+
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    if(presumedUUID<256)
+    {
+    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1))
+    {
+        Editor::object_in_context=&Physics::ObjectsInScene[ResourceManager::ObjectIndexFromUUID(presumedUUID)];
     }
 
+    }
 }
 void Application::processInput(GLFWwindow *window, Renderer *m_Renderer, Editor &editor, float deltaTime)
 {
 
-    glBindFramebuffer(GL_FRAMEBUFFER,m_Renderer->uuidMapFBO);
-    PrintGLERR("BindingFBO in app");
 
-    auto [mx,my] =  ImGui::GetMousePos();
-    int viewport[4];
-    glGetIntegerv(GL_VIEWPORT,viewport);
-    mx/= ImGui::GetIO().DisplaySize.x*viewport[2];
-    my=(1.0f-my/ImGui::GetIO().DisplaySize.y)*viewport[3];
-
-    // std::cout<<"X: "<<mx<<" Y: "<<my<<"\n";
-    int pixelData;
-    glReadBuffer(GL_COLOR_ATTACHMENT0);
-    PrintGLERR("Reading buffer");
-    glReadPixels(1024/2,1024/2,1,1,GL_RED_INTEGER,GL_INT,&pixelData);
-    PrintGLERR("Reading pixels");
-
-
-    // cout<<ImGui::GetIO().DisplaySize.x<<" DISPX\n";
-    // cout<<ImGui::GetIO().DisplaySize.y<<" DISPy\n";
-    // if(pixelData==30)
-    cout<<pixelData<<"\n";
-    glBindFramebuffer(GL_FRAMEBUFFER,0);
+    MousePicking(m_Renderer,window);
 
 
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -176,9 +180,7 @@ void Application::processInput(GLFWwindow *window, Renderer *m_Renderer, Editor 
 
     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1))
     {
-
-        editor.camera_input = true;
-        Log("Click");
+        // editor.camera_input = true;
     }
     // LISTEN MOUSE
     if (editor.camera_input)

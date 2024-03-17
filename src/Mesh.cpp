@@ -34,7 +34,7 @@ void Mesh::Draw(Shader& shader, unsigned int depthMap)
     }
     if (last_location == 0) Log("No textures bound");
     //add depth texture for shading
-    shader.setInt("UUID",30);
+    // shader.setInt("UUID",30);
     shader.setInt("shadowMap", Textures.size());
     glActiveTexture(last_location + 1);
     glBindTexture(GL_TEXTURE_2D, depthMap);

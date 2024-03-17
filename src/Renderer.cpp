@@ -182,7 +182,7 @@ void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,
     }
     // hacky shit for the uuid pass
     if(uuid_pass)
-    activeShader.setInt("UUID", 30);
+    activeShader.setInt("UUID", object_uuid);
     else
         activeShader.setInt("UUID",-1);
     // end hacky shit...everything from this point on is incredibly good and professional
@@ -237,14 +237,8 @@ void Renderer::DrawScene(float alpha)
     }
 
 
-    // int pixelData;
-    // int x=500;
-    // int y=500;
-    // glReadBuffer(GL_COLOR_ATTACHMENT1);
-    // glReadPixels(Mouse::lastX,Mouse::lastY,1,1,GL_RED_INTEGER,GL_INT,&pixelData);
-    // // Log(pixelData,"DATA:::::");
-    // Mouse::GetMouseXY();
-    // // Log(Mouse::lastX);
+
+
 }
 
 void Renderer::DepthPass(float alpha)
@@ -285,21 +279,7 @@ void Renderer::ObjectIDPass(float alpha)
 
         DrawObject(1, {s.pos.x, s.pos.y, s.editor_pos.z}, s.Model_ID, 0, s.Object_UUID, false, uuid_pass);
     }
-    auto [mx,my] =  ImGui::GetMousePos();
-    int viewport[4];
-    glGetIntegerv(GL_VIEWPORT,viewport);
-    mx/= ImGui::GetIO().DisplaySize.x*viewport[2];
-    my=(1.0f-my/ImGui::GetIO().DisplaySize.y)*viewport[3];
 
-    //^^^^buttskin
-
-    GLint pixelData;
-    glReadBuffer(GL_COLOR_ATTACHMENT0);
-    glReadPixels(1024/2, 1024/2, 1, 1, GL_RED_INTEGER, GL_UNSIGNED_BYTE, &pixelData);
-    if(pixelData==30)
-    std::cout << "UUID: " << pixelData << std::endl;
-
-    glBindFramebuffer(GL_FRAMEBUFFER,0);
 }
 
 void Renderer::Clean()

@@ -295,3 +295,18 @@ int GetModelTypeFromString(string s)
     }
     return -1;
 }
+
+int ResourceManager::ObjectIndexFromUUID(int uuid)
+{
+    if(Physics::GetObjectVectorAccess())
+    {
+    for(int i=0;i<Physics::ObjectsInScene.size();i++)
+    {
+       if(Physics::ObjectsInScene[i].Object_UUID==uuid)
+       {
+           return i;
+       }
+    }
+
+    }
+}

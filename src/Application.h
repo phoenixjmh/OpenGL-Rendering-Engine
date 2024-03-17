@@ -35,6 +35,7 @@ class Application
     Editor *m_Editor;
     ResourceManager *m_ResMan;
 
+    void MousePicking(Renderer *m_Renderer,GLFWwindow* window);
     void processInput(GLFWwindow *window, Renderer *renderer, Editor &editor, float deltaTime);
     double currentTime;
     double Time;

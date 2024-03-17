@@ -54,6 +54,7 @@ class ResourceManager
     static bool ReadSceneFileIn(string name, vector<string> &words);
     static void ParseResourceData(vector<string> words);
     static void SpawnResources();
+    static int ObjectIndexFromUUID(int uuid);
     static void SaveBatchResources(vector<Resource> upload_buffer, string scene_name);
     static bool RefreshSceneList;
 

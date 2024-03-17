@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 
+PhysicsObject * Editor::object_in_context=nullptr;
 void Editor::AddHeirarchyEntry(unsigned int index)
 {
     std::string uuid = std::to_string(Physics::ObjectsInScene[index].Object_UUID);
