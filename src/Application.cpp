@@ -124,42 +124,39 @@ void PrintGLERR(std::string operation)
         cout << "OpenGL error when " << operation << " :: " << err << "\n";
     }
 }
-void Application::MousePicking(Renderer *m_Renderer,GLFWwindow* window)
+void Application::MousePicking(Renderer *m_Renderer, GLFWwindow *window)
 {
-    // Log(m_Renderer->uuidMapFBO, "Just before error checking");
-    glBindFramebuffer(GL_FRAMEBUFFER, m_Renderer->uuidMapFBO);
-    PrintGLERR("Binding FBO in app");
-    auto [mx, my] = ImGui::GetMousePos();
-    int viewport[4];
-    glGetIntegerv(GL_VIEWPORT, viewport);
-
-    int presumedUUID;
-    glReadBuffer(GL_COLOR_ATTACHMENT0);
-    PrintGLERR("Reading buffer");
-    glReadPixels(mx, my, 1, 1, GL_RED_INTEGER, GL_INT, &presumedUUID);
-    PrintGLERR("Reading pixels");
-
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    if(presumedUUID<256)
-    {
     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1))
     {
-        Editor::object_in_context=&Physics::ObjectsInScene[ResourceManager::ObjectIndexFromUUID(presumedUUID)];
-    }
+        glBindFramebuffer(GL_FRAMEBUFFER, m_Renderer->uuidMapFBO);
+        PrintGLERR("Binding FBO in app");
+        auto [mx, my] = ImGui::GetMousePos();
+        int viewport[4];
+        glGetIntegerv(GL_VIEWPORT, viewport);
 
+        int presumedUUID;
+        glReadBuffer(GL_COLOR_ATTACHMENT0);
+        PrintGLERR("Reading buffer");
+        glReadPixels(mx, my, 1, 1, GL_RED_INTEGER, GL_INT, &presumedUUID);
+        PrintGLERR("Reading pixels");
+
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        if (presumedUUID < 256)
+        {
+            Editor::object_in_context = &Physics::ObjectsInScene[ResourceManager::ObjectIndexFromUUID(presumedUUID)];
+        }
     }
 }
+
 void Application::processInput(GLFWwindow *window, Renderer *m_Renderer, Editor &editor, float deltaTime)
 {
 
-
-    MousePicking(m_Renderer,window);
-
+    MousePicking(m_Renderer, window);
 
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
-    const float cameraSpeed = 0.5 * deltaTime;
+    m_Renderer->camera.SetCameraSensitivity(0.5);
     // camera controls
     if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
     {
@@ -167,60 +164,42 @@ void Application::processInput(GLFWwindow *window, Renderer *m_Renderer, Editor 
         editor.camera_input = false;
     }
 
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        m_Renderer->camera.camera_position += cameraSpeed * m_Renderer->camera.camera_front;
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        m_Renderer->camera.camera_position -= cameraSpeed * m_Renderer->camera.camera_front;
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        m_Renderer->camera.camera_position -=
-            glm::normalize(glm::cross(m_Renderer->camera.camera_front, m_Renderer->camera.camera_up)) * cameraSpeed;
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        m_Renderer->camera.camera_position +=
-            glm::normalize(glm::cross(m_Renderer->camera.camera_front, m_Renderer->camera.camera_up)) * cameraSpeed;
 
-    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1))
-    {
-        // editor.camera_input = true;
-    }
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        m_Renderer->camera.MoveForward(deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        m_Renderer->camera.MoveBackward(deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        m_Renderer->camera.MoveLeft(deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        m_Renderer->camera.MoveRight(deltaTime);
+
     // LISTEN MOUSE
     if (editor.camera_input)
     {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-        // double xpos;
-        // double ypos;
-        glfwGetCursorPos(window, &Mouse::xPos, &Mouse::yPos);
-        if (Mouse::first)
-        {
-            Mouse::lastX = Mouse::xPos;
-            Mouse::lastY = Mouse::yPos;
-            Mouse::first = false;
-        }
 
-        float xoffset = Mouse::xPos - Mouse::lastX;
-        float yoffset = Mouse::lastY - Mouse::yPos;
-        Mouse::lastX = Mouse::xPos;
-        Mouse::lastY = Mouse::yPos;
-
-        float sensitivity = 0.1f;
-        xoffset *= sensitivity;
-        yoffset *= sensitivity;
-
-        yaw += xoffset;
-        pitch += yoffset;
-
-        if (pitch > 89.0f)
-            pitch = 89.0f;
-        if (pitch < -89.0f)
-            pitch = -89.0f;
-
-        glm::vec3 direction;
-        direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-        direction.y = sin(glm::radians(pitch));
-        direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-        m_Renderer->camera.camera_front = glm::normalize(direction);
+        FPSCameraControls(window, m_Renderer,deltaTime);
     }
     else
     {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
     }
+}
+
+void Application::FPSCameraControls(GLFWwindow *window, Renderer *m_Renderer ,float deltaTime)
+{
+    glfwGetCursorPos(window, &Mouse::xPos, &Mouse::yPos);
+    if (Mouse::first)
+    {
+        Mouse::lastX = Mouse::xPos;
+        Mouse::lastY = Mouse::yPos;
+        Mouse::first = false;
+    }
+
+    float xoffset = Mouse::xPos - Mouse::lastX;
+    float yoffset = Mouse::lastY - Mouse::yPos;
+    Mouse::lastX = Mouse::xPos;
+    Mouse::lastY = Mouse::yPos;
+    m_Renderer->camera.MouseMoveFirstPerson(xoffset,yoffset,deltaTime);
 }

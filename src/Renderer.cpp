@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "Editor.h"
+#include "Camera.h"
 
 #include <glad/glad.h>
 
@@ -87,7 +88,7 @@ void Renderer::init_mvp()
 {
     ModelMatrix = glm::mat4(1);
     ProjectionMatrix = glm::perspective(glm::radians(45.0f), 1000.0f / 1000.0f, 0.1f, 100.0f);
-    ViewMatrix = glm::lookAt(camera.camera_position, camera.camera_position + camera.camera_front, camera.camera_up);
+    ViewMatrix =camera.GetViewMatrix();
 }
 
 void Renderer::ModelMove(float scale, glm::vec3 position)
@@ -133,8 +134,6 @@ void Renderer::createUUIDMap()
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    // float borderColor[] = {1.0, 1.0, 1.0, 1.0};
-
     // attach depth texture as FBO's depth buffer
     glBindFramebuffer(GL_FRAMEBUFFER, uuidMapFBO);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, uuidMap, 0);
@@ -142,8 +141,7 @@ void Renderer::createUUIDMap()
     {
         cout<<"Created UUID FBO";
     }
-    // glDrawBuffer(GL_NONE);
-    // glReadBuffer(GL_NONE);
+
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
@@ -187,7 +185,7 @@ void Renderer::DrawObject(float size, glm::vec3 position, unsigned int model_id,
         activeShader.setInt("UUID",-1);
     // end hacky shit...everything from this point on is incredibly good and professional
 
-    activeShader.setVec3("viewPos", camera.camera_position);
+    activeShader.setVec3("viewPos", camera.GetPosition());
     activeShader.setVec3("objectColor", {1, .3, .3});
     activeShader.setVec3("lightColor", m_sceneData.light_color);
     activeShader.setFloat("light.constant", 1.0f);

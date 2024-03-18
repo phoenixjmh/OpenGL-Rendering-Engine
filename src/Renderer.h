@@ -7,6 +7,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <vector>
+#include "Camera.h"
 
 #include "Model.h"
 #include "Physics.h"
@@ -45,28 +46,12 @@ struct SceneData
     }
 };
 
-struct Camera
-{
-    glm::vec3 camera_position;
-    glm::vec3 camera_front;
-    glm::vec3 camera_up;
-    glm::vec3 camera_target;
-    glm::vec3 camera_direction;
-    glm::vec3 up;
-    glm::vec3 camera_right;
 
-    Camera()
-        : camera_position(glm::vec3(0.0, 0.0, 30.0f)), camera_front(glm::vec3(0, 0, -1)), camera_up(glm::vec3(0, 1, 0)),
-          camera_target(glm::vec3(0, 0, 0)), camera_direction(glm::normalize(camera_position - camera_target)),
-          up(glm::vec3(0, 1, 0)), camera_right(glm::normalize(glm::cross(up, camera_direction)))
-    {
-    }
-};
 
 class Renderer
 {
   public:
-    Renderer() : NO_LIGHTING(false), FLAT_COLOR_SHADING(false)
+    Renderer() : camera(), NO_LIGHTING(false), FLAT_COLOR_SHADING(false)
     {
         Init();
     }
@@ -109,7 +94,7 @@ class Renderer
     void createDepthMap();
     void createUUIDMap();
     int initGlad();
-    int createWindow(const int width, const int height);
+    int createWindow(int width, int height);
     void createModels();
     void createShaders();
     void init_mvp();

@@ -56,10 +56,11 @@ set(HEADERS
   ${PROJECT_SOURCE_DIR}/src/Logger.h
   ${PROJECT_SOURCE_DIR}/src/Application.h
   ${PROJECT_SOURCE_DIR}/src/ResourceManager.h
+        src/Camera.cpp
+        src/Camera.h
 
 
-
-  )
+)
 
 file( GLOB_RECURSE SHADERS ${PROJECT_SOURCE_DIR}/shaders/*.vert ${PROJECT_SOURCE_DIR}/shaders/*.frag)
 file(GLOB_RECURSE VENDOR
